@@ -1,0 +1,70 @@
+%%% from Anna
+\usepackage{ifthen,pifont,latexsym}
+\usepackage[T1]{fontenc}
+\usepackage{times,avant}
+%%\usepackage{mathrsfs}
+%\usepackage[mtpluscal,mtplusscr,T1]{mathtime}
+\usepackage[round,authoryear]{natbib}
+%%
+\usepackage[pdftex]{graphicx}
+%%
+\def\Includefigs{true}
+%%\usepackage{amsmath}
+%%
+%% \usepackage{draftmark}\markdraftpage
+%%
+%%%%%%%%%% Other preamble commands here ...
+%%
+%%
+\def\rfeqn#1{(\ref{eq.#1})}
+\def\vs#1{\vspace{#1\baselineskip}}
+\def\HeadSpace{\vs{.17}}
+\def\BoldHead#1{\HeadSpace\textbf{#1}}
+\def\ItalHead#1{\HeadSpace\textit{#1}}
+\def\UlHead#1{\HeadSpace\underline{#1}}
+\def\floatpagefraction{.7}
+%%
+\newenvironment{descz}{\begin{description}\def\itemsep{0in}}%%
+{\end{description}}
+\newenvironment{itemz}{\begin{itemize}\def\itemsep{0in}}%%
+{\end{itemize}}
+\newenvironment{enumz}{\begin{enumerate}\def\itemsep{0in}}%%
+{\end{enumerate}}
+\newcommand{\m}{\ensuremath{\mathbf{\mu}}}
+\newcommand{\s}{\ensuremath{\mathbf{\Sigma}}}
+
+%%\input acronyms.tex
+%%
+%% Def's and macros
+%%
+% \mathscr changed to \mathcal in the following by APS
+\def\DB{\ensuremath{\mathbf{D}}} %% Database
+\def\QS{\ensuremath{\mathscr{Q}}} %% Query space
+\def\DR{\ensuremath{\mathbf{DR}}} %% Disclosure risk
+\def\DU{\ensuremath{\mathbf{DU}}} %% Data utility
+\def\DD{\ensuremath{\mathbf{DD}}} %% Data distortion
+\def\RS{\ensuremath{\mathbf{R}}} %% Release space
+\def\DBORIG{\ensuremath{{D}_{\mathrm{orig}}}} %% Database
+\def\DBPOST{\ensuremath{\mathscr{D}_{\mathrm{post}}}} %% Database
+\def\DBREL{\ensuremath{D_{\mathrm{rel}}}} %% Released database
+%% Methods
+\def\NOI{{\tt Noise}}
+\def\MICZ{{\tt Micz}}
+\def\MICP{{\tt Micp}}
+\def\MICM{{\tt Micm_all}}
+\def\MICI{{\tt Micir}}
+\def\MIC7{{\tt Micm_groups}}
+\def\RESAMP{{\tt Resamp}}
+\def\RANK{{\tt Rank}}
+%% Utility measures
+\def\LR{\ensuremath{\mathbf{LR}}} %% Likelihood ratio
+\def\KL{\ensuremath{\mathbf{KL}}} %% KL measure
+\def\IO{\ensuremath{\mathbf{IO}}} %% interval overlap measure
+\def\EO{\ensuremath{\mathbf{EO}}} %% ellipsoid overlap measure
+%\def\argmax{\operatornamewithlimits{arg\max}}
+\def\SDL{statistical disclosure limitation (SDL)%%
+    \gdef\SDL{SDL}}
+    
+%%%%%% END ANNA CONFIG
+
+\usepackage{hyperref}
