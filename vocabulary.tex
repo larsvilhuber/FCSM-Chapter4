@@ -1,0 +1,869 @@
+% Note: This package is fragile and you need to use \\ between
+% paragraphs in a multi-paragraph description
+%
+\newglossaryentry{sensitivity}{
+    name=sensitivity,
+    description={When referring to \gls{differential_privacy}, the US Census
+    Bureau uses the term \emph{sensitivity} to denote the impact that
+    a single person can have on the computation of a statistic. In the
+    \gls{differential_privacy} literature this quantity is properly referred
+    to as the $l_1$ sensitivity.\\
+    \\
+     ``The $l_1$ sensitivity of a function $f$ captures the
+    magnitude by which a single individual’s data can change the
+    function $f$ in the worst case, and therefore, intuitively, the
+    uncertainty in the response that we must introduce in order to
+    hide the participation of a single individual.'' \parencite{dwork_algorithmic_2013} \\
+    \\
+    ``The sensitivity of a counting query is 1 (the
+    addition or deletion of a single individual can change a count by
+    at most 1)'' \parencite{dwork_algorithmic_2013} }
+}
+
+\newglossaryentry{neighboring database}{
+    name=neighboring database,
+    description={\Gls{differential_privacy} uses the term \textit{neighboring datasets} (for example, $D$ and $D'$) to describe two datasets that
+    different in the data for one person. This might be, for example,
+    a dataset of 10 people living on a block who are all 30 years old,
+    and a second dataset of 10 people living on a block where 9 people
+    are 30 years old and one person is 31 years old.}
+}
+
+\newglossaryentry{quality}{
+    name=quality,
+    description={``The degree to which a set of characteristics fulfills requirements.'' (ISO 9000)\\
+    ``The totality of features and characteristics of a product or service that bear on its ability to satisfy stated or implied needs. (ISO 8402: 1986, 3.1)'' \\
+    ``Quality is viewed as a multi-faceted concept. The quality
+    characteristics of most importance depend on user perspectives,
+    needs and priorities, which vary across groups of users. Given the
+    work already done in the area of quality by several organisations,
+    notably, Eurostat, IMF and Statistics Canada, the OECD was able to
+    draw on their work and adapt it to the OECD. Thus quality is
+    viewed in terms of seven dimensions, namely:
+    \begin{itemize}
+    \item relevance
+    \item accuracy
+    \item credibility
+    \item timeliness
+    \item accessibility
+    \item interpretability
+    \item coherence. \parencite{oecd_oecd_nodate}
+    \end{itemize}
+    }
+}
+
+\newglossaryentry{accuracy}{
+    name=accuracy,
+    description={``The closeness of computations or estimates to the
+    exact or true values that the statistics were intended to
+    measure.'' \parencite{oecd_oecd_nodate}}
+}
+
+\newglossaryentry{utility}{
+    name=utility,
+    description={TBD}
+}
+
+\newglossaryentry{LEHD}{
+    name=LEHD,
+    description={See Longitudinal Employer-Household Dynamics}
+}
+
+\newglossaryentry{Longitudinal Employer-Household Dynamics}{
+    name=Longitudinal Employer Household Dynamics,
+    description={``The Longitudinal Employer-Household Dynamics (LEHD)
+    program is part of the Center for Economic Studies at the
+    U.S. Census Bureau. The LEHD program produces new, cost effective,
+    public-use information combining federal, state and Census Bureau
+    data on employers and employees under the Local Employment
+    Dynamics (LED) Partnership. State and local authorities
+    increasingly need detailed local information about their economies
+    to make informed decisions. The LED Partnership works to fill
+    critical data gaps and provide indicators needed by state and
+    local authorities.'' Source: \url{https://lehd.ces.census.gov}}
+}
+
+\newglossaryentry{anonymization}
+{
+    name=Anonymization,
+    text=anonymization,
+    description={The process of removing identifying information from data about individuals so that the identity of the data subject cannot be determined. Typically this word should be avoided and the word \textit{de-identification} used instead. This word is problematic because it is typically used to describe a process, but the word actually describes the intended outcome.}
+}
+
+\newglossaryentry{anonymized_data}
+{
+    name=Anonymized Data,
+    description={Data that has successfully undergone an \gls{anonymization}
+    process such that identities of the data subjects cannot be
+    learned. Because in practice it is very difficult for
+    anonymization to produce data that is truly anonymized, the
+    term \textit{anonymized data} should generally be avoided.} 
+}
+
+\newglossaryentry{oxford_comma}
+{
+    name=Oxford Comma,
+    description={The Oxford Comma is the comma that comes before the word ``and'' in a list of three or more words. Census Bureau style is \textit{not} to use an Oxford Comma. Thus phrase ``\textit{bananas, apples and oranges}'' only has one comma, and not two.}
+}
+
+\newglossaryentry{2020_census}
+{
+    name=2020 Census,
+    description={The formal name of the decennial census of population and housing being conducted by the U.S. Census Bureau with reference to the resident population as of April 1, 2020. Note that a reference to the 2020 Census is capitalized because this is the official name of the information product. Note also that in 2000, the decennial census was named Census 2000. This usage appears in contemporaneous documents for that census; however, the current usage is 2000 Census.}
+}
+
+\newglossaryentry{census}
+{
+    name=Census,
+    description={A census is a full enumeration of all members of a given population. In general, avoid using the word \textit{census} by itself  because the Census Bureau conducts both the decennial Census of Population and Housing and the quinquennial Economic Census and Census of Governments.}
+}
+
+\newglossaryentry{census_bureau}
+{
+    name=Census Bureau,
+    description={Within the Executive Branch of the United States government, an agency of the Department of Commerce with the statutory name  \textit{Bureau of the Census}. In the controlled vocabulary of the Department of Commerce, the agency is designated as the \textit{U.S. Census Bureau}. See \url{https://www.commerce.gov/about/bureaus-and-offices}.  Always use \textit{U.S. Census Bureau} on first reference; \emph{Census Bureau} may be used on subsequent references. When the Department of Commerce uses \textit{Census}, capitalized and without reference to any particular year, it is using its controlled vocabulary for short agency names, for example, BEA, Census or NIST. That usage is not allowed in Census Bureau documents.}
+}
+ 
+ \newglossaryentry{decennial_census}
+{
+    name=Decennial Census,
+    description={The constitutionally mandated Census of Population and Housing. The phrase \emph{decennial census} is acceptable on first reference. Note that a generic reference to a decennial census is not capitalized. }
+}
+
+\newglossaryentry{census_of_population_and_housing}
+{
+    name=Census of Population and Housing,
+    description={In the United States, the full name for the ``Actual enumeration'' of the resident population specified in Article 1 of the Constitution and instantiated in 13 U.S. Code as The Census Act. Note that when referencing a generic decennial census, use the term \textit{decennial census}. When referencing a particular decennial census, use either \textit{YYYY Census} or \textit{YYYY Census of Population and Housing}, where YYYY is the date of the decennial census. The former is preferred if the context is clear. The latter is required if there is a possibility of confusion with other censuses.}
+    sort=census of population and housing
+}
+
+\newglossaryentry{de-anonymization}
+{
+    name=De-Anonymization,
+    description={This term is used by some academics to describe the process of re-identifying data that have been reportedly anonymized. Because properly anonymized data cannot be re-identified, this term should not be used.}
+}
+
+\newglossaryentry{differential_privacy}
+{
+    name=Differential Privacy,
+    text=differential privacy,
+    description={Differential privacy (DP) is a property of randomized query algorithms that controls the rate of information leakage from a database that satisfies a given schema. Differential privacy was invented by Cynthia Dwork and  in 2005 (US Patent 7698250B2, filed December 16, 2005); the first publication describing differential privacy is \textcite{dwork_calibrating_2006} \parencite[see also][]{dwork_calibrating_2016}. Differential privacy may be abbreviated \emph{DP} on second reference.}
+}
+
+\newglossaryentry{semantic_privacy}
+{
+    name=Semantic Privacy,
+    description={Semantic privacy is a collection of properties of query algorithms that quantify the advantage of a database attacker after the release of the results of a, possibly randomized, query mechanism compared to the attacker's position prior to the release.}
+}
+
+\newglossaryentry{data}
+{
+    name=Data,
+    description={Data are plural. For singular, use \emph{datum}.}
+}
+
+\newglossaryentry{database}
+{
+    name=Database,
+    text=database,
+    description={We adopt the nomenclature of relational database theory and structured query languages. A database is an organized, computer-readable collection of symbols, usually text or numbers, to be interpreted as an account of some enterprise or operation. A database can be updated. Updates must specify a collection of variables and their new values, which may or may not be dependent on their previous values. A database is designed to be shared among a set of users subject to the requirements controlled by a database administrator.}
+}
+
+\newglossaryentry{confidential_database}
+{
+    name=Confidential Database,
+    text=confidential database,
+    description={A database for which the administrator grants access privileges to a known, finite set of users. The users of a confidential database may not alter their access privileges, extend them to others in the user set, or add users to that set without the permission of the administrator.}
+}
+
+\newglossaryentry{confidential_statistics}
+{
+    name=Confidential Statistics,
+    description={Statistics that are computed on the \gls{confidential_database}.}
+}
+
+\newglossaryentry{database_administrator}
+{
+    name=Database Administrator,
+    description={The database administrator is the person or entity, designated by the database owner, who has the authority to grant and alter access privileges.}
+}
+
+\newglossaryentry{public-use_database}
+{
+    name=Public-Use Database,
+    text=public-use database,
+    description={A \gls{database} for which the administrator has granted read access privileges to any user in the world.}
+}
+
+\newglossaryentry{public-use_data}
+{
+    name=Public-Use Data,
+    description={Synonym for \gls{public-use_database}.}
+}
+
+\newglossaryentry{table}
+{
+    name=Table,
+    description={A two-dimensional symbol in a database in which the \glspl{record} (rows) represent entities and the variables (columns) represent attributes for which each entity may have a specific value. When a database consists of a single table, the terms database and table may be used interchangeably.}
+}
+
+\newglossaryentry{record}
+{
+    name=Record,
+    text=record,
+    description={A record is one row in a properly defined table in a database.}
+}
+
+\newglossaryentry{row}
+{
+    name=Row,
+    description={The term \textit{row} is sometimes used a synonym for a \gls{record} in a table in database. In publications, we  use the term \textit{record} and  always indicate whether the record appears in a table of the \gls{confidential_database} or the \gls{public-use_database}. To avoid confusion, we only use the term \textit{row} when referring to a specific row of a two-dimensional matrix that appears in the referenced presentation or publication. },
+    see={record}
+}
+
+\newglossaryentry{variable}
+{
+    name=Variable,
+    description={A variable is a column in a properly defined table in a database.}
+}
+
+\newglossaryentry{column}
+{
+    name=Column,
+    description={Column is a synonym for variable in a properly defined table in a database. The term \textit{column} may be used if the table is being represented as a two-dimensional matrix in the mathematical presentation.}
+}
+
+\newglossaryentry{geolevel}
+{
+    name=Geolevel,
+    description={A geographical level corresponding to one of the  ``summary levels'' in the central spine of the Census Bureau Geography Division's Summary Level Chart. The current defined geolevels are nation, state, county, tract, block Group and block. A characteristic of the these Geography Division summary levels is each each one completely tiles the geographical area of the United States. That is, each point in the United States is located in a specific State, County, Tract, Block Group and Block.}
+}
+
+\newglossaryentry{geounit}
+{
+    name=Geounit,
+    description={A specific Nation, State, county, tract, block group or block. Geounits are described by a numeric sequence consisting of the 2-digit ANSI state code, the 3-digit ANSI county code, the 6-digit census tract, the 1-digit block group, and the 4-digit block. Note that the first digit of the block \emph{is} the block group, so digits 12 and 13 are always the same digit.}
+}
+
+\newglossaryentry{attribute}
+{
+    name=Attribute,
+    description={Attribute is a synonym for variable.}
+}
+
+\newglossaryentry{access_privileges}
+{
+    name=Access Privileges,
+    description={The list of operations on the database that can be granted or controlled by the database administrator. We will leave this as a primitive. Access privileges include the ability to read the database and its schema. They may also include the separate ability to alter the database or its schema. The most basic access privilege is \textit{read access}.}
+}
+
+\newglossaryentry{database_schema}
+{
+    name=Database Schema,
+    description={The mathematical description of each table in a database, defining the universe from which entities constituting the rows of the table are drawn, the allowable properties of each variable or attribute in the columns of the table, and any mandatory relations among the tables. When the database consists of a single table, the schema need not specify relations to other objects defined outside the scope of that table.}
+}
+
+\newglossaryentry{de-identification}
+{
+    name=De-Identification,
+    description={De-identification is a ``general term for any process
+    of removing the association between a set of identifying data and
+    the data subject.'' (ISO/TS 25237:2008(E) Health Informatics — Pseudonymization. ISO, Geneva, Switzerland. 2008.)\\
+    \\
+    Removing identifiers from a dataset. Use this word instead of \textit{\gls{anonymization}} because this word describes the process, whereas \textit{anonymization} describes the desired outcome.}
+}
+
+\newglossaryentry{relation}
+{
+    name=Relation,
+    description={A relation is a mathematical function connecting the elements of one table in a database to elements of one or more other tables in the same database. The relation is defined in the syntax of the database language that also governs the tables and the schema}
+}
+
+\newglossaryentry{relational_database}
+{
+    name=Relational Database,
+    description={A database is relational if all of the symbols are tables, all of the tables are connected by properly defined relations among their elements, and the schema correctly defines all symbols and elements.}
+}
+
+\newglossaryentry{hierarchical_database}
+{
+    name=Hierarchical Database,
+    description={A hierarchical database is a relational database in which all the relations can be summarized by a tree. The root table, at node $0$ of the tree, may have relations connecting it to tables at level $1$ of the tree. In general, tables at level $n$ of the tree may have relations connecting them to tables at levels $n-1$ and $n+1$. No other relations are allowed.}
+}
+
+\newglossaryentry{randomized_query}
+{
+    name=Randomized Query,
+    description={A randomized query is a random mathematical function whose domain is a database, including its schema, and a set of legal predicates defined on the elements of that database, and whose range is the set of measurable elements consistent with the schema and the predicates. A randomized query defines a conditional distribution of observing a measurable set in the range, given the specific inputs from the domain.}
+}
+
+\newglossaryentry{randomized_query_mechanism}
+{
+    name=Randomized Query Mechanism,
+    description={The fully specified algorithm that implements a particular randomized query.}
+}
+
+\newglossaryentry{query}
+{
+    name=Query,
+    text=query,
+    description={A query is a mathematical function whose domain is a database, including its schema, and a set of legal predicates defined on the elements of that database, and whose range is the space of values consistent with the schema and the predicates.}
+}
+
+\newglossaryentry{query_response}
+{
+    name=Query Response,
+    text=query response,
+    description={The answer to a \gls{query} when applied to a \gls{database} in its domain.}
+}
+
+\newglossaryentry{database_reconstruction}
+{
+    name=Database Reconstruction,
+    text=database reconstruction,
+    description={Given only a set of \glspl{query_response} for which the input was a particular \gls{confidential_database}, a \textit{database reconstruction} is the creation of \glspl{record} in a \gls{public-use_database} that produce exactly the same responses.}
+}
+
+\newglossaryentry{database_reconstruction_attack}
+{
+    name=Database Reconstruction Attack,
+    text=database reconstruction attack,
+    description={The use of \gls{database_reconstruction} to construct a \gls{public-use_database} for which all of the \glspl{record} or portions of all of the records must exactly match counterpart records in the \gls{confidential_database} because the records in the \gls{public-use_database} are the only ones that can produce exactly the same responses as the queries on the confidential database. The shortened form \textit{reconstruction attack} may be used if the context is clear.}
+}
+
+\newglossaryentry{approximate_database_reconstruction_attack}
+{
+    name=Approximate Database Reconstruction Attack,
+    description={The use of \gls{database_reconstruction} to construct a set of \gls{public-use_database}s for which all of the \glspl{record}, or portions of all of the records, must be similar to counterpart records in the \gls{confidential_database} because the distance between all candidate database reconstructions in the set is small in some appropriate metric. The shortened form \textit{approximate reconstruction attack} may be used if the context is clear. See \emph{Exact Database Reconstruction Attack.}}
+}
+
+\newglossaryentry{exact_database_reconstruction_attack}
+{
+    name=Exact Database Reconstruction Attack,
+    description={The use of \gls{database} reconstruction to construct a single \gls{public-use_database} for which all of the \glspl{record} or portions of all of the records are the unique solution that matches the queries from the \gls{confidential_database} that were the inputs to the reconstruction. The shortened form \textit{exact reconstruction attack} may be used if the context is clear. See \emph{Approximate Database Reconstruction Attack.}}
+}
+
+\newglossaryentry{database_re-identification_attack}
+{
+    name=Database Re-Identification Attack,
+    text=database re-identification attack,
+    description={An effort, whether verified or not, in which names or other 
+    identifying information are attached to \gls{database} \glspl{record} that were released or reconstructed without identifying information. For example, a re-identification attack might be carried out in which detailed geographical information is assigned to public-use microdata distributed at a coarser geographic level.
+    At least one of the variables in the re-identified set of records must be associated with values that determine a \gls{population_unique} among the entities that correspond to the records in the \gls{confidential_database}. The shortened form \textit{re-identification attack} may be used if the context is clear.}
+}
+
+\newglossaryentry{reconstruction-abetted_database_re-identification_attack}
+{
+    name=Reconstruction-Abetted Database Re-Identification Attack,
+    description={A \gls{database_re-identification_attack} where the \glspl{record} of the \gls{public-use_database} were constructed in whole or in part by means of a \gls{database_reconstruction_attack}.}
+}
+
+\newglossaryentry{putative_re-identification}
+{
+    name=Putative Re-Identification,
+    text=putative re-identification,
+    description={A \gls{record} that is a member of the set of \glspl{re-identification} in the \gls{public-use_database} subjected to a \gls{database_re-identification_attack}.}
+}
+
+\newglossaryentry{putative_re-identification_rate}
+{
+    name=Putative Re-Identification Rate,
+    text=putative re-identification rate,
+    description={In a \gls{database_re-identification_attack}, the ratio of \glspl{putative_re-identification} to the total number of \glspl{record} in the \gls{confidential_database}, if known, or to an estimate of the total number of records based on public-use data from the \gls{confidential_database}.}
+}
+
+\newglossaryentry{confirmed_re-identification}
+{
+    name=Confirmed Re-Identification,
+    description={A \gls{putative_re-identification} that correctly matches its corresponding \gls{record} in the \gls{confidential_database} on the values of the variable or variables associated with the population unique.}
+}
+
+\newglossaryentry{confirmed_re-identification_rate}
+{
+    name=Confirmed Re-Identification Rate,
+    text=confirmed re-identification rate,
+    description={In a \gls{database_re-identification_attack}, the ratio of \gls{confirmed_re-identification} to the total number of \glspl{record} in the \gls{confidential_database}. Note that no approximation is allowed here because the process of confirmation must be done on the \gls{confidential_database} itself.}
+}
+
+\newglossaryentry{population_unique}
+{
+    name=Population Unique,
+    text=population unique,
+    description={For the \glspl{record} in a \gls{database}, the values of one or more variables such that one, and only one, entity in the operation or enterprise covered by the database may have a record with those values. Note that population unique is a mathematical construct that requires specification of the universe for entities whose records may appear in the database. It does not necessarily correspond to the \textit{primary key} of any table in the database.}
+}
+
+\newglossaryentry{re-identification}
+{
+   name=Re-identification,
+   text=re-identification,
+   description={Re-identification is the process of attempting to
+   discern the identities that have been removed from de-identified
+   data. (NISTIR 8053)}
+}
+
+\newglossaryentry{re-identification confirmation rate}
+{
+    name=Re-Identification Confirmation Rate,
+    text=re-identification confirmation rate,
+   description={In a \gls{database_re-identification_attack}, the ratio of confirmed \glspl{re-identification} to \glspl{putative_re-identification}.}
+}
+
+\newglossaryentry{fake_data}
+{
+    name=Fake Data,
+    description={A synonym for \gls{simulated_data}. Please don't use this term.}
+}
+
+\newglossaryentry{epsilon}
+{
+    name=Epsilon,
+    description={The privacy-loss parameter or privacy-loss budget used by \gls{differential_privacy}. When writing about \gls{differential_privacy}, please be careful not to assume that epsilon is between 0 and 1, as it may not be.}
+}
+
+\newglossaryentry{formally_private}
+{
+    name=Formally Private,
+    description={See formal privacy}
+}
+
+\newglossaryentry{formal_privacy}
+{
+    name=Formal Privacy,
+    description={A collection of mathematical definitions that characterize constraints on the properties of randomized queries and the associated proofs that a collection of algorithms satisfies these properties.}
+}
+
+\newglossaryentry{privatized}
+{
+    name=Privatized,
+    description={The output of an algorithm that possesses the property \emph{formally private}. This term is used frequently in the computer science community, but we will avoid using it because it can be confusing.}
+}
+
+\newglossaryentry{public_database}
+{
+    name=Public Database,
+    description={A synonym for \gls{public-use_database}. This may be used if the context is clear.}
+}
+
+\newglossaryentry{public_data}
+{
+    name=Public Data,
+    description={A synonym for \gls{public-use_database}. This may be used if the context is clear.}
+}
+
+\newglossaryentry{synthetic_database}
+{
+    name=Synthetic Database,
+    description={A \gls{database} whose schema is identical to a particular \gls{confidential_database}, but whose \glspl{record} were constructed using a statistical model whose inputs consisted of the records in that database.}
+}
+
+\newglossaryentry{synthetic_data}
+{
+    name=Synthetic Data,
+    description={A synonym for synthetic database. This may be used if the context is clear.}
+}
+
+\newglossaryentry{simulated_database}
+{
+    name=Simulated Database,
+    text=simulated database,
+    description={A \gls{database} whose schema is identical to a particular \gls{confidential_database}, but whose \glspl{record} were constructed using a statistical model whose inputs included only public-use data, possibly but not necessarily derived from that confidential database.}
+}
+
+\newglossaryentry{simulated_data}
+{
+    name=Simulated Data,
+    text=simulated data,
+    description={A synonym for \gls{simulated_database}. This may be used if the context is clear.}
+}
+
+\newglossaryentry{disclosure_avoidance}
+{
+    name=Disclosure Avoidance,
+    description={The preferred term at the Census Bureau for the collection of methods known as \emph{statistical disclosure limitation} in North America and \emph{statistical disclosure control} in Europe. The Census Bureau now includes formal privacy methods in its use of the term \textit{disclosure avoidance}; however, these are not yet included in the common scientific usage of statistical disclosure limitation or control.}
+}
+
+\newglossaryentry{disclosure}
+{
+    name=Disclosure,
+    description={The legal term for revealing the values of any variable or \gls{record}in a \gls{confidential_database} to someone else. Some disclosures are permitted. Examples include the business-related need to know that is justification for a database administrator at the Census Bureau granting a user read access to a confidential database in that person's custody. \newline \newline Some disclosures are not permitted. Examples include using authorized read access to a confidential database to view information that is not related to the project for which the access was granted (called ``browsing''), emailing unencrypted \glspl{record} from a confidential database, or publishing records or parts of records from a confidential database without the approval of the Disclosure Review Board. In general, Census Bureau technical papers and memos should not use the word \textit{disclosure} without the modifier \textit{avoidance} or \textit{limitation}. There is no such thing as a ``disclosure review.'' It is a \textit{disclosure avoidance} review. The usage within the Internal Revenue Service is different. There, both permitted and illegal disclosures are called ``disclosures.'' At the Census Bureau, the only permitted disclosures are part of the business-related need to know that permits authorized users to have read access to confidential databases. We don't call these ``disclosures,'' even though the IRS does.}
+}
+
+\newglossaryentry{statistical_disclosure_limitation}
+{
+    name=Statistical Disclosure Limitation,
+    description={The standard scientific term in North America and in most U.S. statistical agencies for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from \glspl{re-identification_attack}. The preferred term at the Census Bureau is \textit{disclosure avoidance}; however see the usage for this term.}
+}
+
+\newglossaryentry{statistical_disclosure_control}
+{
+    name=Statistical Disclosure Control,
+    description={The standard scientific term in Europe and at some North American statistical agencies, including Statistics Canada, for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from re-identification attacks. The preferred term at the Census Bureau is \textit{disclosure avoidance}.}
+}
+
+\newglossaryentry{microdata}
+{
+    name=microdata,
+    description={``An observation data collected on an individual
+    object - statistical unit.'' \parencite{oecd_oecd_nodate}\\
+    \\
+    Census Bureau usage is \textit{microdata}, without a hyphen.}
+}
+
+\newglossaryentry{swapping}
+{
+    name=Swapping,
+    description={The statistical disclosure limitation technique that takes as input the \glspl{record} in a \gls{confidential_database} and makes the following manipulation of those records. Certain variables are designated as the \textit{identifiers}. Certain variables are designated as the \textit{matching variables}. The remaining variables are designated as the \textit{rest of the record}. A candidate record for swapping is selected according to a set of pre-specified conditions. Once a candidate record has been selected, a set of potential swap partner records is selected according to another set of pre-specified conditions. The values of the matching variables on the candidate record are compared to the values of the same variables on the potential swap partner records. Only the potential swap partner records that match are retained. One record from the remaining potential swap partners is selected randomly. The identifiers on the candidate record and the selected swap partner record are exchanged with some pre-specified probability. The output database contains the same number of records as the input confidential database. Unswapped records are identical to their counterparts in the input database; however, the values of the identifiers in pairs of records that were actually swapped are different from their counterparts in the input database. The output database, or selected records from it, may or may not be released as a \gls{public-use_database}.}
+}
+
+\newglossaryentry{input_noise_injection}
+{
+    name=Input Noise Injection,
+    description={For some or all of the \glspl{record} in an input \gls{confidential_database} and for some or all of the variables in that database, the values on the corresponding record in the output database have been modified by a random function. Examples include adding random noise or flipping a binary variable by subtracting it from 1 with a pre-specified probability.}
+}
+
+\newglossaryentry{output_noise_injection}
+{
+    name=Output Noise Injection,
+    description={A synonym for a randomized query mechanism.}
+}
+
+\newglossaryentry{generalization}
+{
+    name=Generalization,
+    description={A synonym for \emph{coarsening} that is the conventional term in database theory. You may use either.}
+}
+
+\newglossaryentry{suppression}
+{
+    name=Suppression,
+    description={An output database is created from an input database by deleting \glspl{record} that match a pre-specified condition and/or by mapping certain pre-specified values of variables in the input database schema to a single value in the output database schema that is defined to mean ''this value has not been copied from the input database.'' The technical verb is \textit{to suppress}.}
+}
+
+\newglossaryentry{cell_suppression}
+{
+    name=Cell Suppression,
+    description={The input database consists of tables all of which contain values for all variables. The output database contains the same number of \glspl{record} as the input database; however, some of the values for certain variables in the output database have been suppressed. This is the common meaning of suppression in the Economic Programs Directorate.}
+}
+
+\newglossaryentry{primary_suppression_rule}
+{
+    name=Primary Suppression Rule,
+    description={In the input database, a set of conditions on the values of one or more variables in one or more tables such that, if the value encountered on any \gls{record}for those variables meets those conditions, cell suppression is applied to the values of those variables in the output database. The primary and complementary suppression rules are designed to guard against a particular database reconstruction attack commonly called a subtraction attack.}
+}
+
+\newglossaryentry{complementary_suppression_rule}
+{
+    name=Complementary Suppression Rule,
+    description={In the input database, a set of conditions on the values of one or more variables in one or more tables, which are derived from the conditions in the primary suppression rule, such that, if the value encountered on any \gls{record}for those variables meets those conditions, cell suppression is applied to the values of those variables in the output database. The primary and complementary suppression rules are designed to guard against a particular database reconstruction attack commonly called a subtraction attack.}
+}
+
+\newglossaryentry{model_inversion}
+{
+    name=Model Inversion,
+    description={See \textit{training data extraction}.}
+}
+
+\newglossaryentry{subtraction_attack}
+{
+    name=Subtraction Attack,
+    description={A \gls{database_reconstruction_attack} in which one table in the \gls{public-use_database} is subtracted from another table in the public-use database to reveal all, or a portion, of a \gls{record}in the \gls{confidential_database} that was used to produce the public-use database. A subtraction attack can result in a putative re-identification if values of variables in the public-use database for the reconstructed record are associated with a population unique.}
+}
+
+\newglossaryentry{item_suppression}
+{
+    name=Item Suppression,
+    description={A synonym for cell suppression. Mathematically, the objects in the input database can always be expressed such that they are proper two-dimensional tables as defined in this glossary. Some publication systems at the Census Bureau, however, define the tables with a third layer, which corresponds to a particular statistic when the rows are entities and variables are features of those entities. Item suppression is cell suppression in the component two-dimensional tables of this three-dimensional representation. This is the common meaning of suppression in the LEHD program.}
+}
+
+\newglossaryentry{table_suppression}
+{
+    name=Table Suppression,
+    description={The input database consists of tables all of which contain values for all variables. The output database contains either the same table as the input database or an empty table that corresponds to a table in the input database for which at least one cell suppression occurred.This is the common meaning of suppression in the American Community Survey.}
+}
+
+
+
+\newglossaryentry{coarsening}
+{
+    name=Coarsening,
+    text=coarsening,
+    description={Given the schema for a particular variable from an input database, the schema for the same variable in the output database defines fewer allowable values, at least one of the allowable values in the output database schema maps to two or more values from the input database schema, and no value in the input database schema maps to multiple values in the output database schema. \Gls{coarsening} is the conventional term in statistical disclosure limitation, although this style guide also allows the use of the term \gls{generalization}.}
+}
+
+\newglossaryentry{top_coding}
+{
+    name=Top Coding,
+    description={A form of \gls{coarsening} in which all values of a particular variable in the input database schema that are greater than a pre-specified value map to that pre-specified value in the output database schema.}
+}
+
+\newglossaryentry{bottom_coding}
+{
+    name=Bottom Coding,
+    description={A form of \emph{coarsening} in which all values of a particular variable in the input database schema that are less than a pre-specified value map to that pre-specified value in the output database schema.}
+}
+
+\newglossaryentry{formally_private_synthetic_database}
+{
+    name=Formally Private Synthetic Database,
+    description={A \gls{database} whose schema is identical to a particular \gls{confidential_database}, but whose \glspl{record} were constructed using a model whose inputs consisted exclusively of randomized query responses that satisfied formal privacy.}
+}
+
+\newglossaryentry{formally_private_synthetic_data}
+{
+    name=Formally Private Synthetic Data,
+    description={A synonym for \gls{formally_private_synthetic_database}. The preferred term is formally private micro-data.}
+}
+
+\newglossaryentry{than_v_then}
+{
+    name=Than Versus Then,
+    description={\textit{Than} is a comparative conjunction. Correct usage: 10 is less than 15; I am taller than you. \textit{Then} is a coordinating conjunction. Correct usage: If you do that, then I will do this. Some grammar checkers catch this now, but not all.}
+}
+
+\newglossaryentry{i_v_me}
+{
+    name=I Versus Me,
+    description={\textit{I} is the nominative case of the first-person singular pronoun in English. Correct usage: I want that. You and I are going out. \textit{Me} is the objective case of the first-person singular pronoun in English. Correct usage: That works for you and me. (Think: you would not say "for we," you would say "for us.") \textit{We} is the nominative case of the first-person plural pronoun in English. \textit{Us} is the objective case of the first-person plural pronoun in English. Some grammar checkers catch this now, but not all. And Norma Loquendi is not the girl next door; it's the modal usage on the Internet. But that doesn't make it correct for technical writing in English.}
+}
+
+\newglossaryentry{published_data}
+{
+    name=Published Data,
+    description={The actual data that are published.}
+}
+
+\newglossaryentry{training_data_extraction}
+{
+    name=Training Data Extraction,
+    description={Some kinds of machine learning systems use training data to create classifiers. Training data extraction is the process of extracting the original training data from the resulting statistical classifier. This term should be used in preference to \textit{model inversion}, because there are ways to extract data from classifiers other than model inversion. }
+}
+
+\newglossaryentry{aggregation}
+{
+    name=Aggregation,
+    description={Aggregation is the combining of multiple things into one thing. We use the term aggregation in two ways. When speaking of geographies, we say that smaller geographies are aggregated into larger ones: census blocks are aggregated into block groups, and block groups are aggregated into census tracts. Aggregation is also used to describe the combining of multiple data \glspl{record} for the production of \emph{aggregate statistics}.
+    }
+}
+
+\newglossaryentry{aggregate_statistics}
+{
+    name=Aggregate Statistics,
+    description={Statistics that result from the processing of multiple data \glspl{record}. Prior to the introduction of \gls{differential_privacy}, it was believed that aggregate statistics were sufficient to protect individual privacy. Now we know that each publication of aggregate statistics potentially results in a small loss of privacy loss for each individual contained in the aggregate sample.}
+}
+
+\newglossaryentry{perturbation}
+{
+    name=Perturbation,
+    description={Blank.
+    }
+}
+
+\newglossaryentry{inferential_disclosure}
+{
+    name=Inferential Disclosure,
+    description={Blank.
+    }
+}
+
+\newglossaryentry{privacy_loss_budget}
+{
+    name=Privacy Loss Budget,
+    description={Blank.
+    }
+}
+
+\newglossaryentry{verification_server}
+{
+    name=Verification Server,
+    description={A method, typically a computer server,  for secondary data analysts to assess the quality of inferences obtained with protected released data \parencite{reiter_verification_2009,barrientos_providing_2018}. The verification server sends back a signal about the quality of the inference.
+    } 
+}
+
+\newglossaryentry{validation_server}
+{
+    name=Validation Server,
+    description={A method used to verify the validity of analyses run on protected data, typically through a computer server. Validation servers send back  (protected) results from running the same analysis on the confidential data. Two examples of data produced by the Census Bureau with attached validation servers are the \href{https://www.census.gov/programs-surveys/ces/data/public-use-data/synthetic-longitudinal-business-database/validating-results.html}{SynLBD} and the \href{https://www.census.gov/programs-surveys/sipp/guidance/sipp-synthetic-beta-data-product.html}{SSB}. There is a close similarity to a \gls{remote-submission-system}.    } 
+}
+
+\newglossaryentry{remote-submission-system}
+{
+  name={Remote Submission System},
+  description={Blank.}
+}
+
+\newglossaryentry{laplace_mechanism}
+{
+    name=Laplace Mechanism,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{geometric_mechanism}
+{
+    name=Geometric Mechanism,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{exponential_mechanism}
+{
+    name=Exponential Mechanism,
+    description={A \gls{differential_privacy} mechanism developed by Frank McSherry and Kunal Talwar \parencite{mcsherry_mechanism_2007}.
+    } 
+}
+
+\newglossaryentry{structural_zero}
+{
+    name=Structural Zero,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{top_down_approach}
+{
+    name=Top-Down Approach,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{post_processing}
+{
+    name=Post-Processing,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{Redistricting-File}
+{
+name={Redistricting File},
+description={Blank.}
+}
+
+\newglossaryentry{DHC-P}
+{
+name={DHC-P},
+description={Blank.}
+}
+\newglossaryentry{DHC-H}
+{
+name={DHC-H},
+description={Blank.}
+}
+\newglossaryentry{CVAP}
+{
+name={CVAP},
+description={Blank.}
+}
+
+\newglossaryentry{2010_demonstration_data_products}
+{
+    name=2010 Demonstration Data Products,
+    description={The \gls{Redistricting-File}, \gls{DHC-P} and \gls{DHC-H} tables released on October 29, 2019 to assist the data user community in evaluating the \gls{TopDown} algorithm proposed for use in the 2020 Census. Details can be found at \url{https://www.census.gov/programs-surveys/decennial-census/2020-census/planning-management/2020-census-data-products/2010-demonstration-data-products.html}}
+}
+
+\newglossaryentry{TopDown}
+{
+ name={TopDown Algorithm},
+ description={Blank.}
+}
+
+\newglossaryentry{2020_census_disclosure_avoidance_system}
+{
+    name=2020 Census Disclosure Avoidance System,
+    description={When referring to the 2020 Disclosure Avoidance System for:
+    \begin{itemize}
+        \item  Redistricting File (formerly the PL94-171), DHC-P and DHC-H, or some special tabulations (e.g. \gls{CVAP}) say:
+        \begin{itemize}
+            \item \textit{"The \Gls{TopDown} "} NOT \textit{"\Gls{differential_privacy}"}.
+        \end{itemize}
+        \item Detailed DHC, AIAN Tribal Summary Data, Household-Person Joins, and any other 2020 Census tabulation not generated by the TopDown Algorithm say:
+        \begin{itemize}
+            \item \textit{``The proposed formal privacy algorithms for other 2020 Census data product''} NOT \textit{``\Gls{differential_privacy}''} NOR \textit{"TopDown algorithm"}.
+        \end{itemize}
+        \item When referring to the set of tabulations from the TopDown algorithm based on the 2010 CEF proposed for soft release of September 30, 2019, say:
+        \begin{itemize}
+            \item \textit{``The demonstration products using 2010 data and the TopDown algorithm''} or \textit{``the 2010 Demonstration Data Products''} NOT \textit{``Test products''} NOR \textit{``\Gls{differential_privacy} test products''} NOR other variations of the same.
+        \end{itemize}
+    \end{itemize}}
+}
+
+\newglossaryentry{CUI}
+{
+    name=CUI,
+    description={See  \gls{CUI2}    },
+    see={CUI2}
+}
+\newglossaryentry{CUI2}{
+  name=Controlled Unclassified Information,
+  description={``Controlled Unclassified Information (CUI) is
+  information that requires safeguarding or dissemination controls
+  pursuant to and consistent with applicable law, regulations, and
+  government-wide policies but is not classified under Executive Order
+  12526 or the Atomic Energy Act, as amended.  \\
+  \\
+  Executive Order 13556, ``Controlled Unclassified Information'' (the
+  Order), establishes a program for managing CUI across the Executive
+  branch and designates the National Archives and Records
+  Administration (NARA) as Executive Agent to implement the Order and
+  oversee agency actions to ensure compliance. The Archivist of the
+  United States delegated these responsibilities to the Information
+  Security Oversight Office (ISOO).'' \parencite{noauthor_about_2016}
+  %Source: \url{https://www.archives.gov/cui/about}\\
+  \\
+  \\
+  Controlled Unclassified Information at the US Census Bureau includes information that is protected under \gls{title13} or \gls{title26}, as well as personnel information protected under \gls{title5}. }
+}
+
+\newglossaryentry{title13}
+{
+name={Title 13, U.S.C.},
+text=Title 13,
+description={The Census Bureau is bound by Title 13 of the United States Code (13 U.S.C.A. \P 1 et seq. [2007]). These laws not only provide authority for the work we do, but also provide strong protection for the information we collect from individuals and businesses.\\
+\\
+Title 13 provides the following protections to individuals and businesses:
+\begin{itemize}
+\item     Private information is never published. It is against the law to disclose or publish any private information that identifies an individual or business such, including names, addresses (including GPS coordinates), Social Security Numbers, and telephone numbers.
+\item     The Census Bureau collects information to produce statistics. Personal information cannot be used against respondents by any government agency or court.
+\item   Census Bureau employees are sworn to protect confidentiality. People sworn to uphold Title 13 are legally required to maintain the confidentiality of your data. Every person with access to your data is sworn for life to protect your information and understands that the penalties for violating this law are applicable for a lifetime.
+\item    Violating the law is a serious federal crime. Anyone who violates this law will face severe penalties, including a federal prison sentence of up to five years, a fine of up to \$250,000, or both.
+\end{itemize} \parencite{us_code_title_1954}
+}
+}
+
+\newglossaryentry{title26}
+{
+name={Title 26, U.S.C.} ,
+text={Title 26},
+description={The Internal Revenue Code (IRC) is the body of law that codifies all federal tax laws, including income, estate, gift, excise, alcohol, tobacco, and employment taxes. \\
+\\
+These laws constitute Title 26 of the U.S. Code (26 U.S.C.A. \P 1 et seq. [1986]) and are implemented by the Internal Revenue Service (\gls{IRS}) through its Treasury Regulations and Revenue Rulings.\\
+\\
+Congress made major statutory changes to Title 26 in 1939, 1954, and 1986. Because of the extensive revisions made in the Tax Reform Act of 1986, Title 26 is now known as the Internal Revenue Code of 1986 (Pub. L. No. 99-514, \P 2, 100 Stat. 2095 [Oct. 22, 1986]).\\
+\\
+Title 26, U.S. Code applies to the statistical work conducted by the U.S. Census Bureau's collection of IRS data about households and businesses. Title 26 provides for the conditions under which the IRS may disclose Federal Tax Returns and Return Information (\gls{FTI}) to other agencies, including the Census Bureau. Specifically, Title 26, U.S. Code 6103 (j) (1) permits the IRS to share FTI with the Census Bureau for statistical purposes in the structuring of censuses and national economic accounts, as well as for conducting related statistical activities authorized by law.\\
+\\
+Protection of Title 26 data\\
+\\
+Publication of all statistical products by the Census Bureau, including those based in whole or in part on administrative records covered by Title 26, are subject to disclosure avoidance procedures prescribed by the Census Bureau's internal Disclosure Review Board. Additionally, products using administrative records data are subject to any additional disclosure review required by the supplying agency. \parencite{us_census_bureau_title_nodate}}
+}
+
+\newglossaryentry{FTI}
+{
+name={Federal Tax Returns and Return Information },
+description={Blank. Abbreviated as FTI.}
+}
+
+\newglossaryentry{IRS}
+{
+name={Internal Revenue Service},
+description={Blank. Abbreviated as IRS.}
+}
+
+\newglossaryentry{title5}
+{
+name=Title 5,
+description={Title 5 U.S.C. More details.}
+}
+
+
+% LocalWords:  interpretability

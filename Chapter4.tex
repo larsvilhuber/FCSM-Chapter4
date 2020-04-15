@@ -3,11 +3,18 @@
 %%% All setup/preamble moved to a different file
 \input{preamble.tex}
 
+%%% IF YOU HAVE ANY QUESTIONS, LOOK AT THE README.MD
+
 \begin{document}
 
-\title{Chapter 4: Data Utility}
+\title{WP22 Chapter 4: Impact of restricted access models and SDL methods on data quality and usability}
 
-\author{ Anna Oganian\thanks{National Center for Health Statistics, CDC, Hyattsville, MD, USA}, Lars Vilhuber\thanks{Cornell University}
+\author{% 
+Anna Oganian\thanks{National Center for Health Statistics}, 
+Ellen Galantucci\thanks{Bureau of Labor Statistics}, \\
+Donna Miller\thanks{National Center for Health Statistics}, 
+Lars Vilhuber\thanks{U.S. Census Bureau and Cornell University}, \\
+Simson Garfinkel\thanks{U.S. Census Bureau}
 }
 
 \maketitle
@@ -23,8 +30,7 @@ with disclosure risk measures to gauge risk-utility tradeoffs of
 competing methods.  Some examples of utility metrics are presented in this Chapter.
 A  decision-theoretic formulation for evaluating
 disclosure limitation procedures based on utility and risk metrics is outlined
-as well. Finally, examples of utility assessments of certain families of SDL methods are 
-given. 
+as well. Finally, examples of utility assessments of certain families of SDL methods are given. 
 
 
 \end{abstract}
@@ -101,14 +107,19 @@ penalty in terms of data utility. Thus, in a scenario represented by Figure \ref
 \section{ Data Utility metrics} \label{du_metrics}
 In this section we present some examples of Data Utility metrics \DU\ that can be used by the data protector to assess the quality of the masked data, which can help to choose an appropriate approach for disclosure limitation.
 
-\subsection{Global metrics... This section is still under construction.... }
+In the broadest sense, the utility of a particular data release is the
+benefit to society of the released information. Benefits this general
+are nearly impossible to quantify and measure, because they depend on
+more than simply the released data. A narrower, more feasible approach
+is to characterize the quality of what can be learned from the masked
+data relative to what can be learned from the original data. Such
+comparisons can be tailored to specific analyses or can be broadened
+to global differences in distributions. Examples of both approaches are presented in the corresponding sections below.
 
+\subsection{Generic metrics of Data Utility}
 
-Global metrics capture global differences between the distributions of the original and masked
-data. To access such global differences between the distributions of the original and masked 
-data one could use for example Kullback-Leibler divergence.  
-When the data are approximately multivariate normal, the \KL\
-captures the differences in the distributions of the entire data,
+Generic metrics capture global differences between the distributions of the original and masked data. 
+One class of examples of generic measures are functions of the differences between point estimates of the first and second moments (and possibly other summaries) based on the original and masked data. Another is statistical distances between the distributions of the original and masked data \cite{dfks02, gks06}, for example Kullback-Leibler divergence.  When the data are approximately multivariate normal, the \KL\ captures the differences in the distributions of the entire data,
 which in turn account for differences in inferences. 
 However, the \KL\ measure is not easily
 interpreted when the data, or some transformed version of the
@@ -116,21 +127,69 @@ data, are not reasonably well-described by a multivariate normal
 distribution, that is why it's  usage as  global metric of data utility
 would be limited.
 
-$ $
- 
- {\bf Propensity score metric (which is an example of a generic metric)  will be added here...}
 
-$ $
 
-Generic metrics may be blunt in that they do not necessarily distinguish 
-among variables. For example, an \SDL\ procedure that produces very different
-distributions for a subset of substantively important predictors,
-but matches well on the subset of substantively unimportant
-predictors, could be rated as higher utility than a procedure that
-produces the opposite effects.  Similarly, minimizing the \KL\
-value may not lead to optimal \DBREL\ for certain conditional
-distributions.  
+\subsubsection{Propensity score utility metric}
+% AO 03/31: start editing from here next time
 
+An example of global utility metric that can be computed for the variables of different types is a propensity score based measure(\cite{propen}).
+
+For any binary variable $T$, the propensity
+score is defined as the probability that $T=1$ given covariate values $\bx$. \cite{rr83} show
+that $T$ and $\bx$ are conditionally independent given the propensity
+score. Thus, when two large groups have the same distributions of
+propensity scores, the groups should have similar distributions of $\bx$.
+
+This theory suggests an approach for measuring data utility.
+First, we merge (by ``stacking'') the original and masked data sets, adding a variable $T$ that equals one for all records from the masked data set and equals zero for all records from the original data set. If
+variables have been dropped as part of the masking, they are also
+dropped in computation of propensity scores.  Second, for each record
+in the original and masked data, we compute the probability of being
+in the \textit{masked} data set---the propensity
+score. Third, we compare the distributions of the propensity scores in
+the original and masked data.  When those distributions are similar,
+the distributions of the original and masked data are similar, and so
+data utility should be relatively high.
+
+Propensity scores can be estimated via a logistic regression of the
+``masked/original'' variable $T$ on functions of all variables $\bx$
+in the data set.  
+
+The similarity of the propensity scores for the masked and original
+observations can be assessed in numerous ways, for example comparisons
+of their percentiles in each group.  A simple summary was proposed in \cite{propen}:
+\begin{equation}
+U_p =  \frac{1}{N} \sum_{i=1}^{N}\left[\hat{p}_i-c\right]^2,
+\end{equation}
+where $N$ is the total number of records in the merged data set,
+$\hat{p}_i$ is the estimated propensity score for unit $i$, and $c$
+equals the proportion of units with masked data in the merged data
+set. In many cases, the original and masked data sets would have the
+same size $N_0$, in which case, $N = 2N_0$ and $c = 1/2$. When the
+original and masked data have the same distribution, the propensity
+scores for all units should approximately equal $c$, so that $U_p$ is
+near zero. At the other extreme, if $\hat{p}_i$ is nearly one for
+units $i$ from the masked data and nearly 0 for units from the
+original data, then the two data sets are completely distinguishable
+and $U_p \sim 1/4$.
+
+
+This measure is sensitive to the specification of the logistic
+regression used to estimate the propensity scores.  For example, using
+an intercept only in the regression results in $\hat{p}_i = c$ for all
+$i$, regardless of the values in the masked data.  The advice from the
+literature on propensity score estimation is
+useful in the data utility context as well: include all variables,
+with interactions and polynomial terms, considered important to make
+similar in the original and masked data.
+
+Note, that propensity score metric is not tied to the nature of the
+masking.  This allows us to compute utility values on the same scale
+for any masking strategy, which facilitates comparisons of the data
+quality achieved by competing strategies applied on the same data
+set.
+
+Also note, that generic metrics of data utility may be blunt in that they do not necessarily distinguish among variables. For example, an \SDL\ procedure that produces very different distributions for a subset of substantively important predictors, but matches well on the subset of substantively unimportant predictors, could be rated as higher utility than a procedure that produces the opposite effects.  Similarly, minimizing the value of the generic utility metric may not lead to optimal \DBREL\ for certain conditional distributions.  
 
 \subsection{Analysis specific metrics}
 In this section we describe several analysis-specific or so called ``narrow" measures of data utility. There are many possible ways of defining such type of metrics,  they 
@@ -307,10 +366,43 @@ One of the desirable features of Microaggregation methods is that they  inherent
  
  $ $ 
 
+Another large family of methods is Noise infusion, which can be implemented as additive or multiplicative noise for numerical variables.
+Basic implementations of noise addition preserve  mean and the correlation structure of the original data which is an important for some statistical analyses, such as linear regression. Using data transformation Noise addition can be implemented in such a way so that not only correlation matrix  but covariance matrix is preserved as well.
+ In it's basic implementation noise methods do not preserve positivity or non-negativity constraints, that is, if original variables are non-negative then masked variables are also non- negative. Multiplicative noise on the other hand can preserve positivity constraints.
+ % Here: About metric-related performance of noise.
+ 
+Standard implementations of additive and multiplicative noise does not satisfies the requirements of k-anonimity.
+Noise generated from Normal distribution with specially calibrated variance, as well as noise generated from Laplace distribution with special parameters  satisfies requirements of  differential privacy.
+Record linkage experiments showed that additive noise has low re-identification risk.
+
+
+
 {\bf To be continued... A few more SDL families will be described/compared in terms of Utility}
  
+\section{Donna's stuff}
+
+\section{Data Access - from LARS}
+\input{05_02_state_of_physical_security}
+
 %\bibliographystyle{apalike}
 \bibliography{dg2-new,from_zotero}
 \bibliographystyle{econ}
+
+\section*{Glossary}
+To use the glossary, use 
+\begin{verbatim}
+    \gls{term}  for lower-case version
+    \Gls{term} for upper-case version
+    \glspl{term}  for lower-case plural
+    \Glspl{term} for upper-case plural version
+\end{verbatim}
+Example
+\begin{quote}
+    The use of \gls{differential_privacy} is expanding.
+\end{quote}
+
+\glsaddall
+\printglossary
+
 
 \end{document}

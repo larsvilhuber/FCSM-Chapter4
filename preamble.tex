@@ -2,6 +2,9 @@
 \usepackage{ifthen,pifont,latexsym}
 \usepackage[T1]{fontenc}
 \usepackage{times,avant}
+\usepackage{comment}
+\usepackage{datetime}
+
 %%\usepackage{mathrsfs}
 %\usepackage[mtpluscal,mtplusscr,T1]{mathtime}
 \usepackage[round,authoryear]{natbib}
@@ -32,6 +35,8 @@
 {\end{enumerate}}
 \newcommand{\m}{\ensuremath{\mathbf{\mu}}}
 \newcommand{\s}{\ensuremath{\mathbf{\Sigma}}}
+\newcommand{\bx}{\textbf{x}}
+
 
 %%\input acronyms.tex
 %%
@@ -68,3 +73,27 @@
 %%%%%% END ANNA CONFIG
 
 \usepackage{hyperref}
+
+
+\begin{comment}
+Place \usepackage{glossaries} and \makeglossaries in your preamble
+(after \usepackage{hyperref} if present). Then define any number of
+\newglossaryentry and \newacronym glossary and acronym entries in your
+preamble (recommended) or before first use in your document
+proper. Finally add a \printglossaries call to locate the glossaries
+list within your document structure. Then pepper your writing with
+\gls{mylabel} macros (and similar) to simultaneously insert your
+predefined text and build the associated glossary. File processing
+must now include a call to makeglossaries followed by at least one
+further invocation of latex or pdflatex -
+https://en.wikibooks.org/wiki/LaTeX/Glossary
+\end{comment}
+\usepackage[toc, nonumberlist, nopostdot, xindy]{glossaries}
+\usepackage{glossaries-extra}
+\glssetcategoryattribute{general}{glossname}{title}
+
+\makeglossaries
+\input{vocabulary}
+
+% Must be issued before \printglossaries
+\setglossarystyle{altlisthypergroup}
