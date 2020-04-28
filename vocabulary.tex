@@ -514,38 +514,50 @@
 
 \newglossaryentry{swapping}
 {
-    name=Swapping,
+    name=swapping,
     description={The \gls{statistical_disclosure_limitation} technique that takes as input the \glspl{record} in a \gls{confidential_database} and makes the following manipulation of those records. Certain variables are designated as the \textit{identifiers}. Certain variables are designated as the \textit{matching variables}. The remaining variables are designated as the \textit{rest of the record}. A candidate record for swapping is selected according to a set of pre-specified conditions. Once a candidate record has been selected, a set of potential swap partner records is selected according to another set of pre-specified conditions. The values of the matching variables on the candidate record are compared to the values of the same variables on the potential swap partner records. Only the potential swap partner records that match are retained. One record from the remaining potential swap partners is selected randomly. The identifiers on the candidate record and the selected swap partner record are exchanged with some pre-specified probability. The output database contains the same number of records as the input confidential database. Unswapped records are identical to their counterparts in the input database; however, the values of the identifiers in pairs of records that were actually swapped are different from their counterparts in the input database. The output database, or selected records from it, may or may not be released as a \gls{public-use_database}.}
+}
+
+\newglossaryentry{noise_injection}
+{
+    name=noise injection,
+    description={Depending on context, see \gls{input_noise_injection} or \gls{output_noise_injection}.}
+}
+
+\newglossaryentry{noise_infusion}
+{
+    name=noise infusion,
+    description={A synonym for \gls{input_noise_injection}. }
 }
 
 \newglossaryentry{input_noise_injection}
 {
-    name=Input Noise Injection,
+    name=input noise injection,
     description={For some or all of the \glspl{record} in an input \gls{confidential_database} and for some or all of the variables in that database, the values on the corresponding record in the output database have been modified by a random function. Examples include adding random noise or flipping a binary variable by subtracting it from 1 with a pre-specified probability.}
 }
 
 \newglossaryentry{output_noise_injection}
 {
-    name=Output Noise Injection,
+    name=output noise injection,
     description={A synonym for a randomized query mechanism.}
 }
 
 \newglossaryentry{generalization}
 {
-    name=Generalization,
-    description={A synonym for \emph{coarsening} that is the conventional term in database theory. You may use either.}
+    name=generalization,
+    description={A synonym for \gls{coarsening} that is the conventional term in database theory. You may use either.}
 }
 
 \newglossaryentry{suppression}
 {
-    name=Suppression,
+    name=suppression,
     description={An output database is created from an input database by deleting \glspl{record} that match a pre-specified condition and/or by mapping certain pre-specified values of variables in the input database schema to a single value in the output database schema that is defined to mean ''this value has not been copied from the input database.'' The technical verb is \textit{to suppress}.}
 }
 
 \newglossaryentry{cell_suppression}
 {
-    name=Cell Suppression,
-    description={The input database consists of tables all of which contain values for all variables. The output database contains the same number of \glspl{record} as the input database; however, some of the values for certain variables in the output database have been suppressed. This is the common meaning of suppression in the Economic Programs Directorate.}
+    name=cell suppression,
+    description={The input database consists of tables all of which contain values for all variables. The output database contains the same number of \glspl{record} as the input database; however, some of the values for certain variables in the output database have been suppressed. This is the common meaning of \gls{suppression} in the Economic Programs Directorate.}
 }
 
 \newglossaryentry{primary_suppression_rule}

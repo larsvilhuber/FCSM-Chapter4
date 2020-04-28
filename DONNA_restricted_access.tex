@@ -1,3 +1,5 @@
+
+
 \subsection{ACCESS TIER: PROTECTED}
 \begin{itemize}
 \item{Restricted-use data behind firewall with output controlled for disclosures};
@@ -9,37 +11,48 @@ Access to this data is not automatic but requires one or more additional steps s
 
 \subsubsection{Web-Based Query Systems} 
 Query systems allow users to design queries to generate customized tabulations (WP 22). Also have predefined queries.
+Data stored in query systems can be protected and restricted.
 
-*Data stored in query systems can be protected and restricted.
 
-Pros *
+
+
+
+
+\paragraph{Nonstatistical Metrics}
 \begin{itemize}
-\item 	Run queries on data more detailed than PUFs (varies by agency—could be restricted data or perturbed data from public use files) 
-\begin{itemize}
-    \item Increases utility, improves data quality
-\end{itemize}	
-\item 	Permits a wider range of analyses than does releasing only data summaries and it provides results based on actual rather than simulated microdata (Gomatam, 2005, 164)
-\item 	Developer can build in SDL (see Gomatam, 2005, 167)
+    \item  Expensive to implement and maintain (Haggard, 2006, 189)
+   \item Functionality is limited to what the developer allows to be run in the query system
+   \item No direct access to the microdata (may vary by agency)
+   \item Decrease utility
+   \item May not prevent disclosures (table splicing; can do this in CDC Wonder) 
+   \item Functionality is limited to what the developer allows to be run in the query system
+   \item Developer can build in SDL (see Gomatam, 2005, 167)
 \end{itemize}
 
-Cons 
+\paragraph{Statistical Metrics}
 \begin{itemize}
-\item 	No direct access to the microdata (may vary by agency)
-\begin{itemize}
-    \item 	Decrease utility
-\end{itemize}
-\item 	May not prevent disclosures (table splicing; can do this in CDC Wonder) 
-\item 	Built in disclosure technique can reduce utility and quality (Gomatam, 2005, 167-168)
-\begin{itemize}
-    \item Top coding, swapping, adding noise (WP 22)
-    \item Prohibit key identifiers (age, race, sex) as outcome variables but permit as predictors (Gomatam, 2005, 167)
-    \item Disallow any transformations (Gomatam 2005, 173)
-\end{itemize}
-\item 	Functionality is limited to what the developer allows to be run in the query system
-\item 	Expensive to implement and maintain (Haggard, 2006, 189)
+    \item    Built in disclosure technique can reduce utility and quality (Gomatam, 2005, 167-168)
+     \begin{itemize}
+         \item  Top coding, \gls{swapping}, \gls{output_noise_injection} (adding noise) (WP 22)
+        \item Prohibit key identifiers (age, race, sex) as outcome variables but permit as predictors (Gomatam, 2005, 167)
+       \item Disallow certain transformations (Gomatam 2005, 173)
+       \end{itemize}
+   \item Run queries on data more detailed than PUFs (varies by agency—could be restricted data or perturbed data from public use files) 
+   \begin{itemize}
+     \item Increases utility, improves data quality
+     \item Permits a wider range of analyses than does releasing only data summaries and it provides results based on actual rather than simulated microdata (Gomatam, 2005, 164)
+   \end{itemize}
 \end{itemize}
 
-New queries vs. pre-computed queries 
+
+
+
+
+
+
+
+
+
 
 Examples of online query systems: 
 \begin{itemize}
@@ -50,12 +63,23 @@ Examples of online query systems:
 \item The \href{https://microdata.no}{microdata.no} system provides a facility to analyze Norwegian register data. The system allows for descriptive statistics as well as a small set of regression methods and  analysis of variance. Automated anonymization processes have been implemented, and microdata cannot be viewed. Researchers must be affiliated with (Norwegian) institutions having an agreement with Statistics Norway. A custom programming interface is used, based on Python augmented with four (commonly used) Python modules, but limited to certain functionality. 
 \end{itemize}
 
+
+
+
 \subsection{ACCESS TIER: RESTRICTED ACCESS}
 \begin{itemize}
 \item{Licensing program} (user controlled infrastructure)
 \item{Virtual Data Enclave}
 \item{Physical Data Enclave}
 \end{itemize}
+
+Virtual and Physical Data Enclaves
+
+
+
+
+
+
 
 This is the default tier for containing data collected under a pledge of confidentiality. Critical to its modernization is to include more access options using newer technology such as commercial cloud computing and remote access/virtual enclave. This should also include viable options not constrained by the current system of Federal Statistical Research Data Centers (FSRDCs).
 
@@ -66,12 +90,14 @@ The primary difference between the two types of data enclaves is the process by 
 
 Both types of data enclaves increase the usability of the data. Researchers are permitted to access data not publicly available under controlled conditions. For example, [list types of data that cannot be publicly accessed: genetics data, geocoded data, detailed geography, exact dates, detailed race, income]. 
 
+\begin{comment}
 Conversely, both types of data enclaves can also decrease the utility of the data. The process for requesting access to restricted use data can be arduous and thus reduce the number of researchers who can access the data. Researchers must submit research proposals containing detailed information about the research project, the hypotheses to be tested, the data set and variables to be used in the analysis,
 the empirical methods to be used, and the specific data outputs that will result from the project thus limiting exploratory analyses. Research proposals are reviewed and approved by a review committee which can take several weeks or months to complete. Additionally, users must agree to terms and conditions governing the access and use of the confidential data as well as sign nondisclosure affidavits. Some researchers are required to complete background investigations, Special Sworn Status, be citizens of the U.S.,  …etc.  Furthermore, there are costs associated with accessing restricted use data via data enclaves [include examples]. Costs reduce the utility of the data because some researchers may not have funding to complete research. Most students completing graduate or doctoral level research, living on fixed incomes, may not be able to afford to access data in enclaves. 
 
 Both types of data enclaves allow researchers to improve the accuracy and precision of their estimates. Data available in enclaves are not subject to the statistical disclosure limitation methods that public use files are subject to prior to release. For example, detailed race/ethnicity and geography measures are typically not available on public use files due to disclosure concerns. These types of measures are available to researchers in data enclaves thus increasing the accuracy and prevision of estimates.  [Might include examples of research completed in RDCs that could not be completed using PUFs].
 
 Data quality can also be decreased when accessing restricted use data in data enclaves. Extreme values or values representing an individual are generally removed from analysis (e.g. minima, maxima, medians). These values might be useful to researchers doing sensitivity analysis. {need to expand this section}
+\end{comment}
 
 \paragraph{Examples of physical enclaves}
 \begin{itemize}
@@ -91,11 +117,103 @@ Data quality can also be decreased when accessing restricted use data in data en
     \item the \href{https://fdz.iab.de/}{German Research Data Centre (FDZ)} of the German Federal Employment Agency (BA) at the Institute for Employment Research (IAB) uses multiple access modes, one of which has dedicated thin clients located in designated access-controlled offices (typically at universities), connecting to an agency-controlled virtual desktop infrastructure. Output control is manual.
 \end{itemize}
 
+
+
+
+\paragraph{Nonstatistical Metrics}
+
+\begin{itemize}
+    \item Accessibility (level of difficulty)
+    \begin{itemize}
+         \item Physical RDC: Must physically sit in RDC to access RU data.
+        \item Virtual RDC: Access RU data remotely over secure electronic lines via personal computers while sitting in office or home.
+    \end{itemize}
+    \item Increase utility of data (access to data not otherwise accessible) 
+    \begin{itemize}
+         \item Genetics data, geocoded data, detailed geography, exact dates, detailed race, income
+    \end{itemize}
+    \item Decrease utility of data
+    \begin{itemize}
+        \item        Process to obtain access is arduous
+        \begin{itemize}
+             \item Prepare research proposals
+            \item Review committees (can take several weeks, months to complete)
+            \item Agree to terms and conditions of use: 
+           Sign affidavits, 
+           Complete background investigations, Special Sworn Status, be citizens of the U.S.,  
+           Etc.
+        \end{itemize}
+    \end{itemize}
+    \item Costs (include examples)
+    \begin{itemize}
+        \item        Some researchers may not have funding to complete research. Most students completing graduate or doctoral level research, living on fixed incomes, may not be able to afford to access data in enclaves.
+    \end{itemize}
+
+\end{itemize}
+
+
+
+\paragraph{Statistical Metrics}
+\begin{itemize}
+    \item      Improve the accuracy and precision of estimates
+    \begin{itemize}
+          \item Data available in enclaves are not subject to the statistical disclosure limitation methods that public use files are subject to prior to release. For example, detailed race/ethnicity and geography measures are typically not available on public use files due to disclosure concerns. These types of measures are available to researchers in data enclaves thus increasing the accuracy and prevision of estimates. 
+         \item Might include examples of research completed in RDCs that could not be completed using PUFs (example: top-coding of income and inequality measures, in ACS)
+    \end{itemize}
+    \item Decrease data quality (maybe include?)
+    \begin{itemize}
+         \item    Extreme values or values representing an individual are generally removed from analysis (e.g. minima, maxima, medians). These values might be useful to researchers doing sensitivity analysis (need to expand this section). This varies by RDC. 
+    \end{itemize}
+    \item Include a discussion on how/if RDCs subject restricted use data to statistical disclosure methods
+    \begin{itemize}
+            \item NCHS RDC does not apply SDL methods to data. They do apply complementary cell suppression
+            \item BLS RDC does top code some data (check with Ellen on this)
+            \item Census applies \gls{coarsening} to some data (geography), censors name and address information for most data unless expressly allowed
+    \end{itemize}
+\end{itemize}
+
+
+
 \subsubsection{Licensing Program (user controlled infrastructure)}
 
 Licensing agreements permit a researcher to use restricted data offsite, but under highly restricted
 conditions, as spelled out in a legally binding agreement [text from Restricted Access Procedures]. Arrangements that place restrictions on who has access, at what locations, and for what purposes access is allowed normally require written agreements between agency and users. These agreements usually subject the user to fines, being denied access in the future and/or other penalties for improper disclosure of individual information and other violations of the agreed conditions of use. Users may be subject to external audits conducted by the agency to assure terms of the agreement are being followed. Users in violation may be required to pay fines or be subject to other legal penalties [text from WP 22].
 
+
+
+
+
+
+
+\paragraph{Examples}
+\begin{itemize}
+    \item NCES provides access to certain data sets through a licensing scheme. Additional information on this method is provided here: \url{https://nces.ed.gov/FCSM/pdf/CDAC\_RAP.pdf}
+    \item Various agency-sponsored surveys, such as the National Longitudinal Surveys of Youth (NLSY) may provide access to certain elements of otherwise public-use microdata via a licensing scheme. For instance, the NLSY79 Geocode Data is subject to a \href{https://www.bls.gov/nls/questions-and-answers.htm#anch25}{variant of a licensing program}. Note that yet other data may only be available through more restricted access methods, such as enclave data.
+\end{itemize}
+
+
+
+\paragraph{Nonstatistical Metrics}
+
+\begin{itemize}
+    \item Arduous process (text from Restricted Access Procedures)
+    \item  Demonstrate a need for sensitive data
+    \item  Need to provide authorization for all users at the requesting institution 
+    \item Signatures by senior level official and key staff.
+    \item Submit data security plan
+    \item Data provider may want to review statistical output before publication’
+    \item  IRB review, approval might be needed
+    \end{itemize}
+Note: should include text here regarding Designated Agent Agreements for CIPSEA protected data.
+
+\paragraph{Statistical Metrics}
+
+     See statistical metrics for virtual and physical RDCs
+     Others?
+
+
+
+\begin{comment}
 Licensing agreements require:
 \begin{itemize}
 \item a demonstrated need for sensitive data;
@@ -110,11 +228,6 @@ The license may be for a specified period of time and data files must be returne
 \item Some licensors require fees and/or approval by an institutional review board. 
 \end{itemize}
 
-\paragraph{Examples}
-\begin{itemize}
-    \item NCES provides access to certain data sets through a licensing scheme. Additional information on this method is provided here: \url{https://nces.ed.gov/FCSM/pdf/CDAC\_RAP.pdf}
-    \item Various agency-sponsored surveys, such as the National Longitudinal Surveys of Youth (NLSY) may provide access to certain elements of otherwise public-use microdata via a licensing scheme. For instance, the NLSY79 Geocode Data is subject to a \href{https://www.bls.gov/nls/questions-and-answers.htm#anch25}{variant of a licensing program}. Note that yet other data may only be available through more restricted access methods, such as enclave data.
-\end{itemize}
 
 \paragraph{Pros for Licensing Program}
 \begin{itemize}
@@ -129,7 +242,7 @@ The license may be for a specified period of time and data files must be returne
     \item Potential loss of control over output control
 \end{itemize}
 
-
+\end{comment}
 
 
  
