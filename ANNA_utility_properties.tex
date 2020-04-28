@@ -1,0 +1,35 @@
+There is a wide plethora of SDL methods and they differ significantly in terms of utility  and risk. Moreover, each method can be applied with a different degree of intensity, that is, data protector can chose  different values of parameters for these methods which leads to a significant variability in terms of utility for the same type of SDL method. 
+For example, for Noise addition, smaller or larger variance of Noise can be chosen, which will affect the utility and risk of the masked data. For Swapping, the percentage of swapped records can be different; for Rankswappping  the  maximal allowed difference in the ranks of the swapped records  may vary (which is a parameter of Rankswapping). For Microaggregation, a minimal number of records per group, which is a parameter of microaggregation, can significantly affect the utility of the data, as microaggregation has a shrinkage effect on the data. Thus the number of method-parameter combinations is virtually infinite, each one with it's own utility and risk. Hence, it is impossible to provide a comprehensive utility comparisons of method-comparisons combinations. Thus, we will present generic utility characterizations for a small selection of well known families of SDL methods. 
+
+\subsection{Microaggregation}
+One of the largest families of SDL methods (in terms of different  implementations) is a  Microaggregation family. It can   be divided into Multivariate Microaggregation   and  Univariate Microaggregation. The later group includes Microaggregation with individual ranking which consists of microaggregating each variable individually and independently from other variables and Microaggregation using projections. The later one is usually accomplished by ranking  multivariate data by projecting them onto a single axis, using either the sum of $z$-scores or the first principal component, and then aggregating data into groups of size $k$, except possibly for one group of larger size (from $k+1$ to $2k -1$).
+Of all these methods, Microaggregation with individual ranking is typically the least perturbative method \citep{kkors06}. Typically, masked values obtained using this method are close to the corresponding original ones, and thus analyses performed on the masked data often lead to a very similar results to those obtained on the original data. For example, \EO\ utility metric is often high (close to $1$)  for this method \citep{kkors06}. On the other hand, the risk of re-identification using record linkage approach is high for this method as well. 
+In contrast to Microaggregation using Individual Ranking, projection-based Microaggregation methods and Multivariate Microaggregation may introduce significant perturbation to the data with utility ranging from average to low according to \IO\ and \EO\ . But the re-identification risk (estimated based on record-linkage experiments) is low as well \citep{}. 
+
+One of the desirable features of Microaggregation methods is that they  inherently satisfy requirements of $k$-anonymity (if this criterion for Risk  is adopted by the data protector of course). Also microaggregation methods preserve means of the original data, they preserve positivity/non-negativity  constraints in the data (if the original values are positive, so are the masked values)  which in some instances of data release  is a desirable feature. Microaggregation methods, on the other hand have a shrinking effect on the original data by reducing  the variance of the original data.
+
+\subsection{Coarsening}
+Coarsening and rounding. To be filled in.
+ 
+\subsection{Noise addition/multiplication} 
+
+Another large family of methods is Noise infusion, which can be implemented as additive or multiplicative noise for numerical variables.
+Some implementations of noise infusion, for example additive multivariate normal noise, followed by the data transformation \cite{} or multiplicative log-normal noise \cite{} also followed by the data transformation, preserves the mean vector and covariance matrix of the original data on average. These statistics are important for a range of analyses, for example, for linear regression. In general, noise infusion does not preserve positivity constraints for the variables and inter-attribute relationships such as linear inequalities. For example, Age, many
+economic variables(gross income, taxes) and many demographic variables (number of employees, number of students in the sixth grade) obey positivity constraints. Examples of inequality constraints are ``Federal taxes $<$ gross income’’, ``number of salaried employees < number of employees'' and ``year of birth < year of death''.
+
+% AO start here next time!
+
+
+For example, , that is, if original variables are non-negative then masked variables are also non- negative. Multiplicative noise on the other hand can preserve positivity constraints.
+ % Here: About metric-related performance of noise.
+ 
+Standard implementations of additive and multiplicative noise does not satisfies the requirements of $k$-anonymity.
+Noise generated from Normal distribution with specially calibrated variance, as well as noise generated from Laplace distribution with special parameters  satisfies requirements of  differential privacy.
+Record linkage experiments showed that additive noise has low re-identification risk.
+
+\subsection{Swapping}
+{\bf To be filled later}...
+
+
+\subsection{Synthetic methods}
+{\bf To be filled later}...

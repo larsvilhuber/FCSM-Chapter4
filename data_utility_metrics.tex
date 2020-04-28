@@ -1,0 +1,242 @@
+In this section we present some examples of Data Utility metrics \DU\ that can be used by the data protector to assess the quality of the masked data, which can help to choose an appropriate approach for disclosure limitation.
+
+In the broadest sense, the utility of a particular data release is the
+benefit to society of the released information. Benefits this general
+are nearly impossible to quantify and measure, because they depend on
+more than simply the released data. A narrower, more feasible approach
+is to characterize the quality of what can be learned from the masked
+data relative to what can be learned from the original data. Such
+comparisons can be tailored to specific analyses or can be broadened
+to global differences in distributions. Examples of both approaches are presented in the corresponding sections below.
+
+\subsection{Generic metrics of Data Utility}
+
+Generic metrics capture global differences between the distributions of the original and masked data. 
+One class of examples of generic measures are functions of the differences between point estimates of the first and second moments (and possibly other summaries) based on the original and masked data. Another is statistical distances between the distributions of the original and masked data \cite{dfks02, gks06}, for example Kullback-Leibler divergence.  When the data are approximately multivariate normal, the \KL\ captures the differences in the distributions of the entire data,
+which in turn account for differences in inferences. 
+However, the \KL\ measure is not easily
+interpreted when the data, or some transformed version of the
+data, are not reasonably well-described by a multivariate normal
+distribution, that is why it's  usage as  global metric of data utility
+would be limited.
+
+
+
+\subsubsection{Propensity score utility metric}
+% AO 03/31: start editing from here next time
+
+An example of global utility metric that can be computed for the variables of different types is a propensity score based measure(\cite{propen}).
+
+For any binary variable $T$, the propensity
+score is defined as the probability that $T=1$ given covariate values $\bx$. \cite{rr83} show
+that $T$ and $\bx$ are conditionally independent given the propensity
+score. Thus, when two large groups have the same distributions of
+propensity scores, the groups should have similar distributions of $\bx$.
+
+This theory suggests an approach for measuring data utility.
+First, we merge (by ``stacking'') the original and masked data sets, adding a variable $T$ that equals one for all records from the masked data set and equals zero for all records from the original data set. If
+variables have been dropped as part of the masking, they are also
+dropped in computation of propensity scores.  Second, for each record
+in the original and masked data, we compute the probability of being
+in the \textit{masked} data set---the propensity
+score. Third, we compare the distributions of the propensity scores in
+the original and masked data.  When those distributions are similar,
+the distributions of the original and masked data are similar, and so
+data utility should be relatively high.
+
+Propensity scores can be estimated via a logistic regression of the
+``masked/original'' variable $T$ on functions of all variables $\bx$
+in the data set.  
+
+The similarity of the propensity scores for the masked and original
+observations can be assessed in numerous ways, for example comparisons
+of their percentiles in each group.  A simple summary was proposed in \cite{propen}:
+\begin{equation}
+U_p =  \frac{1}{N} \sum_{i=1}^{N}\left[\hat{p}_i-c\right]^2,
+\end{equation}
+where $N$ is the total number of records in the merged data set,
+$\hat{p}_i$ is the estimated propensity score for unit $i$, and $c$
+equals the proportion of units with masked data in the merged data
+set. In many cases, the original and masked data sets would have the
+same size $N_0$, in which case, $N = 2N_0$ and $c = 1/2$. When the
+original and masked data have the same distribution, the propensity
+scores for all units should approximately equal $c$, so that $U_p$ is
+near zero. At the other extreme, if $\hat{p}_i$ is nearly one for
+units $i$ from the masked data and nearly 0 for units from the
+original data, then the two data sets are completely distinguishable
+and $U_p \sim 1/4$.
+
+
+This measure is sensitive to the specification of the logistic
+regression used to estimate the propensity scores.  For example, using
+an intercept only in the regression results in $\hat{p}_i = c$ for all
+$i$, regardless of the values in the masked data.  The advice from the
+literature on propensity score estimation is
+useful in the data utility context as well: include all variables,
+with interactions and polynomial terms, considered important to make
+similar in the original and masked data.
+
+Note, that propensity score metric is not tied to the nature of the
+masking.  This allows us to compute utility values on the same scale
+for any masking strategy, which facilitates comparisons of the data
+quality achieved by competing strategies applied on the same data
+set.
+
+Also note, that generic metrics of data utility may be blunt in that they do not necessarily distinguish among variables. For example, an \SDL\ procedure that produces very different distributions for a subset of substantively important predictors, but matches well on the subset of substantively unimportant predictors, could be rated as higher utility than a procedure that produces the opposite effects.  Similarly, minimizing the value of the generic utility metric may not lead to optimal \DBREL\ for certain conditional distributions.  
+
+\subsection{Analysis specific metrics}
+In this section we describe several analysis-specific or so called ``narrow'' measures of data utility. There are many possible ways of defining such type of metrics,  they 
+are linked to the types of analyses the user would like to do on the original data.
+ Obviously, we cannot cover all of them, so below we present some examples 
+ that can help to illustrate the idea of such metrics.
+
+
+
+\subsection{Confidence Interval Overlap Utility Measures}\label{subsec.ci}
+
+Data users and analysts  are frequently interested in fitting regression models. 
+This process produces not only point estimates of the coefficients, but
+confidence intervals as well. Thus, it is desirable for utility measures 
+to indicate when the inferences, and
+not just the point estimates, from regressions using the released
+data are close to the corresponding ones using the original data.
+
+Confidence intervals are main mechanism of inference in regression
+models. Therefore, one measure of utility is the degree of overlap
+between confidence intervals obtained from the same regressions
+fit using the \DBREL\ and \DBORIG. The greater the overlap, the
+higher the utility.
+
+\subsubsection{Interval Overlap Metric}
+Consider a fixed regression on the data, with specified response
+and predictors. Let $(L_{\mathrm{rel},k}, U_{\mathrm{rel},k})$ be
+the lower and upper limits of the 95\% confidence interval for the
+regression coefficient $\beta_{k}$ obtained from \DBREL, and let
+$(L_{\mathrm{orig},k}, U_{\mathrm{orig},k})$ be the corresponding
+interval obtained from \DBORIG. Let $f_{\mathrm{rel},k}$ and
+$f_{\mathrm{orig},k}$ be the estimated posterior distributions of
+$\beta_k$ computed under \DBREL\ and \DBORIG, respectively.  For
+example, in linear regression, $f_{\mathrm{orig},k}$ is the usual
+$t$-distribution on $n-p$ degrees of freedom with mean
+$\hat{\beta}_{\mathrm{orig},k}$ and variance the $k$th diagonal
+element in
+$\hat{\sigma}^2_{\mathrm{orig}}\left(X^{'}_{\mathrm{orig}}
+X_{\mathrm{orig}}\right)^{-1}$, where
+$\hat{\sigma}^2_{\mathrm{orig}}$ is the estimated residual
+variance obtained from fitting the regression of
+$Y_{\mathrm{orig}}$ on the associated $n \times p$ matrix of
+predictors, $X_{\mathrm{orig}}$, which includes a vector of ones
+for the intercept.
+
+The probability overlap in the confidence intervals for
+any $\beta_{k}$ \citep{kkors06} is defined to be equal to:
+\begin{equation}
+I_k = \frac{1}{2}
+\left[\int_{L_{\mathrm{rel},k}}^{U_{\mathrm{rel},k}}
+f_{\mathrm{orig},k}(t) dt +
+\int_{L_{\mathrm{orig},k}}^{U_{\mathrm{orig},k}}
+f_{\mathrm{rel},k}(t) dt \right]
+\end{equation}
+and the interval overlap measure, \IO, as
+\begin{equation}
+I = \sum_{i=1}^p I_k / p
+\end{equation}
+where $p$ is the dimension of the predictor variable matrix, including
+the intercept.
+
+By design, $0 \leq I_k \leq 0.95$ (as is the case for $I$), with
+effectively no overlap corresponding to $I_k =0$ and perfect
+overlap corresponding to $I_k = 0.95$.  Averaging the two
+integrals in the definition of $I_k$ helps deal with cases where
+$(L_{\mathrm{orig},k}, U_{\mathrm{orig},k}) \subseteq
+(L_{\mathrm{rel},k}, U_{\mathrm{rel},k})$, or vice versa.  For an
+illustrative example, consider the case where
+$(L_{\mathrm{orig},k}, U_{\mathrm{orig},k}) = (8, 10)$, and for
+two different proposed releases the $(L_{\mathrm{rel_1},k},
+U_{\mathrm{rel_1},k})=(-12, 30)$ and $(L_{\mathrm{rel_2},k},
+U_{\mathrm{rel_2},k})=(3, 15)$. From a utility perspective, the
+second release is clearly preferable over the first release. The
+\IO\ as defined favors the second release.  A criterion that just
+equals $\int_{L_{\mathrm{rel},k}}^{U_{\mathrm{rel},k}}
+f_{\mathrm{orig},k}(t) dt$ does not clearly distinguish the
+releases, since this integral for both procedures is essentially
+one. Similar examples can be constructed to show the inadequacy of
+using $\int_{L_{\mathrm{orig},k}}^{U_{\mathrm{orig},k}}
+f_{\mathrm{rel},k}(t) dt$ alone.
+
+The \IO\ does not distinguish among intervals that have $I_k$
+essentially equal to zero, some of which may be ``less worse''
+than others. To adjust for this, the measure can be modified by
+adding some distance-based penalty when $I$ is essentially zero,
+or perhaps even when $I_k$ is essentially zero for some $k$, where
+distance is defined as some function of the
+$|\hat{\beta}_{\mathrm{rel},k} - \hat{\beta}_{\mathrm{orig},k}|$
+or of $\min\left\{|L_{\mathrm{rel},k} - U_{\mathrm{orig},k}|,
+|L_{\mathrm{orig},k} - U_{\mathrm{rel},k}|\right\}$.
+
+An alternative measure is the overlap in the interval lengths. Let
+$(L_{\mathrm{over},k}, U_{\mathrm{over},k})$ be the overlap in
+these intervals, defined as $\left\{b: b \geq L_{\mathrm{orig},k},
+b \geq L_{\mathrm{rel},k},  b \leq U_{\mathrm{orig},k},  b \leq
+U_{\mathrm{rel},k}\right\}$. Then, the average relative overlap in
+the confidence intervals for any $\beta_{k}$ equals:
+\begin{equation}
+J_k = \frac{1}{2} \left[\frac{U_{\mathrm{over},k} -
+L_{\mathrm{over},k}}{U_{\mathrm{orig},k} - L_{\mathrm{orig},k}} +
+\frac{U_{\mathrm{over},k} -
+L_{\mathrm{over},k}}{U_{\mathrm{rel},k} -
+L_{\mathrm{rel},k}}\right].
+\end{equation}
+The interval overlap measure then could be defined as $J = (1/p)
+\sum_{i=1}^p J_k$.
+
+\subsubsection{Ellipsoid Overlap Metric}\label{subsec.overlap}
+The \IO\ measure considers each interval separately, effectively using all
+the conditional distributions of the coefficients rather than
+their joint distribution. Some analysts may be interested in
+simultaneous intervals, which are defined by multidimensional
+ellipsoids.  So, ellipsoid overlap measure \EO\ is constructed 
+based on  posterior probabilities of regions defined by ellipsoids, that is, 
+Bayesian perspective is used.  Generically, let $\hat{\beta}$ be the
+maximum likelihood estimate of $\beta$, the $p \times 1$ vector of
+true coefficients in the regression of $Y$ on $X$, and let
+$\hat{\sigma}^2$ be the estimated residual variance for that
+regression. Under the standard linear regression assumptions and
+assuming standard non-informative prior distributions for $\beta$
+and $\sigma^2$, the $(1-\alpha)100\%$ joint highest posterior
+density ellipsoid for $\beta$ is defined by all the values of
+$\beta$ such that
+\begin{displaymath}\label{eq_1}
+\frac{(\beta
+-\hat{\beta})^T(X^{T}X)(\beta-\hat{\beta})}{p\hat{\sigma}^2} \leq
+F(\alpha;p, n-p)
+\end{displaymath}
+where $F(\alpha;p, n-p)$ is the critical value from the $F$
+distribution with $p$ and $n-p$ degrees of freedom.  The ellipsoid
+from the \DBORIG, which we call $E_{\mathrm{orig}}$, is obtained
+by setting $\hat{\beta} = \hat{\beta}_{\mathrm{orig}}$,
+$\hat{\sigma}^2 = \hat{\sigma}^2_{\mathrm{orig}}$, and $X =
+X_{\mathrm{orig}}$. The ellipsoid from the \DBREL, which we call
+$E_{\mathrm{rel}}$, is obtained by setting $\hat{\beta} =
+\hat{\beta}_{\mathrm{rel}}$, $\hat{\sigma}^2 =
+\hat{\sigma}^2_{\mathrm{rel}}$, and $X = X_{\mathrm{rel}}$.
+
+The utility measure \EO\ is the average of two posterior
+probabilities: 1) the probability of $E_{\mathrm{orig}}$ computed
+using the posterior distribution of $\beta$ based on \DBREL, and
+2) the probability of $E_{\mathrm{rel}}$ computed using the
+posterior distribution of $\beta$ based on \DBORIG. To determine
+these probabilities,  Monte Carlo simulations can be used. For the first
+probability, we draw values of $\beta$ from its posterior
+conditional on \DBREL\ which is a $p$-variate t-distribution with
+mean $\hat{\beta}_{\mathrm{rel}}$ and covariance matrix
+$\hat{\Sigma}_{\mathrm{rel}} =
+\hat{\sigma}^2_{\mathrm{rel}}(X_{\mathrm{rel}}^{t}X_{\mathrm{rel}})^{-1}$
+with $n-p$ degrees of freedom. We then calculate the percentage of
+these drawn $\beta$ that lie within $E_{\mathrm{orig}}$.  A
+similar process is used to obtain the second probability by
+drawing from the posterior of $\beta$ given \DBORIG\ and finding
+the percentage of these that lie inside $E_{\mathrm{rel}}$. As
+with \IO, the \EO\ can be extended to any parameters whose
+distribution is well-approximated by a multivariate normal
+distribution.

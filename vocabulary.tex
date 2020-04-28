@@ -2,7 +2,7 @@
 % paragraphs in a multi-paragraph description
 %
 \newglossaryentry{sensitivity}{
-    name=sensitivity,
+  name=sensitivity,
     description={When referring to \gls{differential_privacy}, the US Census
     Bureau uses the term \emph{sensitivity} to denote the impact that
     a single person can have on the computation of a statistic. In the
@@ -198,6 +198,7 @@
 \newglossaryentry{public-use_data}
 {
     name=Public-Use Data,
+    text=public-use data,
     description={Synonym for \gls{public-use_database}.}
 }
 
@@ -362,7 +363,7 @@
 {
     name=Putative Re-Identification,
     text=putative re-identification,
-    description={A \gls{record} that is a member of the set of \glspl{re-identification} in the \gls{public-use_database} subjected to a \gls{database_re-identification_attack}.}
+    description={A \gls{record} that is a member of the set of \glspl{database_re-identification_attack} in the \gls{public-use_database} subjected to a \gls{database_re-identification_attack}.}
 }
 
 \newglossaryentry{putative_re-identification_rate}
@@ -479,25 +480,27 @@
 \newglossaryentry{disclosure_avoidance}
 {
     name=Disclosure Avoidance,
-    description={The preferred term at the Census Bureau for the collection of methods known as \emph{statistical disclosure limitation} in North America and \emph{statistical disclosure control} in Europe. The Census Bureau now includes formal privacy methods in its use of the term \textit{disclosure avoidance}; however, these are not yet included in the common scientific usage of statistical disclosure limitation or control.}
+    text=disclsosure avoidance,
+    description={The preferred term at the Census Bureau for the collection of methods known as \emph{\gls{statistical_disclosure_limitation}} in North America and \emph{statistical disclosure control} in Europe. The Census Bureau now includes formal privacy methods in its use of the term \textit{disclosure avoidance}; however, these are not yet included in the common scientific usage of \gls{statistical_disclosure_limitation} or control.}
 }
 
 \newglossaryentry{disclosure}
 {
     name=Disclosure,
-    description={The legal term for revealing the values of any variable or \gls{record}in a \gls{confidential_database} to someone else. Some disclosures are permitted. Examples include the business-related need to know that is justification for a database administrator at the Census Bureau granting a user read access to a confidential database in that person's custody. \newline \newline Some disclosures are not permitted. Examples include using authorized read access to a confidential database to view information that is not related to the project for which the access was granted (called ``browsing''), emailing unencrypted \glspl{record} from a confidential database, or publishing records or parts of records from a confidential database without the approval of the Disclosure Review Board. In general, Census Bureau technical papers and memos should not use the word \textit{disclosure} without the modifier \textit{avoidance} or \textit{limitation}. There is no such thing as a ``disclosure review.'' It is a \textit{disclosure avoidance} review. The usage within the Internal Revenue Service is different. There, both permitted and illegal disclosures are called ``disclosures.'' At the Census Bureau, the only permitted disclosures are part of the business-related need to know that permits authorized users to have read access to confidential databases. We don't call these ``disclosures,'' even though the IRS does.}
+    description={The legal term for revealing the values of any variable or \gls{record}in a \gls{confidential_database} to someone else. Some disclosures are permitted. Examples include the business-related need to know that is justification for a database administrator at the Census Bureau granting a user read access to a confidential database in that person's custody. \newline \newline Some disclosures are not permitted. Examples include using authorized read access to a confidential database to view information that is not related to the project for which the access was granted (called ``browsing''), emailing unencrypted \glspl{record} from a confidential database, or publishing records or parts of records from a confidential database without the approval of the Disclosure Review Board. In general, U.S. Census Bureau technical papers and memos should not use the word \textit{disclosure} without the modifier \textit{avoidance} or \textit{limitation}. There is no such thing as a ``disclosure review.'' It is a \gls{disclosure_avoidance} review. The usage within the Internal Revenue Service is different. There, both permitted and illegal disclosures are called ``disclosures.'' At the U.S. Census Bureau, the only permitted disclosures are part of the business-related need to know that permits authorized users to have read access to confidential databases. We don't call these ``disclosures,'' even though the IRS does.}
 }
 
 \newglossaryentry{statistical_disclosure_limitation}
 {
     name=Statistical Disclosure Limitation,
-    description={The standard scientific term in North America and in most U.S. statistical agencies for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from \glspl{re-identification_attack}. The preferred term at the Census Bureau is \textit{disclosure avoidance}; however see the usage for this term.}
+    text=statistical disclosure limitation,
+    description={The standard scientific term in North America and in most U.S. statistical agencies for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from \glspl{database_re-identification_attack}. See also \gls{statistical_disclosure_control}. The preferred term at the U.S. Census Bureau is \gls{disclosure_avoidance}; however see the usage for this term.}
 }
 
 \newglossaryentry{statistical_disclosure_control}
 {
     name=Statistical Disclosure Control,
-    description={The standard scientific term in Europe and at some North American statistical agencies, including Statistics Canada, for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from re-identification attacks. The preferred term at the Census Bureau is \textit{disclosure avoidance}.}
+    description={The standard scientific term in Europe and at some North American statistical agencies, including Statistics Canada, for the collection of methods invented in the 1970s and refined over the next decades to protect \glspl{confidential_database} from re-identification attacks. See also \gls{statistical_disclosure_limitation}. The preferred term at the U.S. Census Bureau is \gls{disclosure_avoidance}.}
 }
 
 \newglossaryentry{microdata}
@@ -506,13 +509,13 @@
     description={``An observation data collected on an individual
     object - statistical unit.'' \parencite{oecd_oecd_nodate}\\
     \\
-    Census Bureau usage is \textit{microdata}, without a hyphen.}
+    U.S. Census Bureau usage is \textit{microdata}, without a hyphen.}
 }
 
 \newglossaryentry{swapping}
 {
     name=Swapping,
-    description={The statistical disclosure limitation technique that takes as input the \glspl{record} in a \gls{confidential_database} and makes the following manipulation of those records. Certain variables are designated as the \textit{identifiers}. Certain variables are designated as the \textit{matching variables}. The remaining variables are designated as the \textit{rest of the record}. A candidate record for swapping is selected according to a set of pre-specified conditions. Once a candidate record has been selected, a set of potential swap partner records is selected according to another set of pre-specified conditions. The values of the matching variables on the candidate record are compared to the values of the same variables on the potential swap partner records. Only the potential swap partner records that match are retained. One record from the remaining potential swap partners is selected randomly. The identifiers on the candidate record and the selected swap partner record are exchanged with some pre-specified probability. The output database contains the same number of records as the input confidential database. Unswapped records are identical to their counterparts in the input database; however, the values of the identifiers in pairs of records that were actually swapped are different from their counterparts in the input database. The output database, or selected records from it, may or may not be released as a \gls{public-use_database}.}
+    description={The \gls{statistical_disclosure_limitation} technique that takes as input the \glspl{record} in a \gls{confidential_database} and makes the following manipulation of those records. Certain variables are designated as the \textit{identifiers}. Certain variables are designated as the \textit{matching variables}. The remaining variables are designated as the \textit{rest of the record}. A candidate record for swapping is selected according to a set of pre-specified conditions. Once a candidate record has been selected, a set of potential swap partner records is selected according to another set of pre-specified conditions. The values of the matching variables on the candidate record are compared to the values of the same variables on the potential swap partner records. Only the potential swap partner records that match are retained. One record from the remaining potential swap partners is selected randomly. The identifiers on the candidate record and the selected swap partner record are exchanged with some pre-specified probability. The output database contains the same number of records as the input confidential database. Unswapped records are identical to their counterparts in the input database; however, the values of the identifiers in pairs of records that were actually swapped are different from their counterparts in the input database. The output database, or selected records from it, may or may not be released as a \gls{public-use_database}.}
 }
 
 \newglossaryentry{input_noise_injection}
@@ -572,7 +575,7 @@
 \newglossaryentry{item_suppression}
 {
     name=Item Suppression,
-    description={A synonym for cell suppression. Mathematically, the objects in the input database can always be expressed such that they are proper two-dimensional tables as defined in this glossary. Some publication systems at the Census Bureau, however, define the tables with a third layer, which corresponds to a particular statistic when the rows are entities and variables are features of those entities. Item suppression is cell suppression in the component two-dimensional tables of this three-dimensional representation. This is the common meaning of suppression in the LEHD program.}
+    description={A synonym for cell suppression. Mathematically, the objects in the input database can always be expressed such that they are proper two-dimensional tables as defined in this glossary. Some publication systems at the U.S. Census Bureau, however, define the tables with a third layer, which corresponds to a particular statistic when the rows are entities and variables are features of those entities. Item suppression is cell suppression in the component two-dimensional tables of this three-dimensional representation. This is the common meaning of suppression in the LEHD program.}
 }
 
 \newglossaryentry{table_suppression}
@@ -587,7 +590,7 @@
 {
     name=Coarsening,
     text=coarsening,
-    description={Given the schema for a particular variable from an input database, the schema for the same variable in the output database defines fewer allowable values, at least one of the allowable values in the output database schema maps to two or more values from the input database schema, and no value in the input database schema maps to multiple values in the output database schema. \Gls{coarsening} is the conventional term in statistical disclosure limitation, although this style guide also allows the use of the term \gls{generalization}.}
+    description={Given the schema for a particular variable from an input database, the schema for the same variable in the output database defines fewer allowable values, at least one of the allowable values in the output database schema maps to two or more values from the input database schema, and no value in the input database schema maps to multiple values in the output database schema. \Gls{coarsening} is the conventional term in \gls{statistical_disclosure_limitation}, although this style guide also allows the use of the term \gls{generalization}.}
 }
 
 \newglossaryentry{top_coding}
@@ -651,17 +654,37 @@
     description={Statistics that result from the processing of multiple data \glspl{record}. Prior to the introduction of \gls{differential_privacy}, it was believed that aggregate statistics were sufficient to protect individual privacy. Now we know that each publication of aggregate statistics potentially results in a small loss of privacy loss for each individual contained in the aggregate sample.}
 }
 
-\newglossaryentry{perturbation}
+\newglossaryentry{perturbation-based Methods}
 {
-    name=Perturbation,
-    description={Blank.
+    name=Perturbation-based Methods,
+    description={``Perturbation-based methods falsify the data before publication by introducing an element of error purposely for confidentiality reasons. This error can be inserted in the cell values after the table is created, which means the error is introduced to the output of the data and will therefore be referred to as output perturbation, or the error can be inserted in the original data on the microdata level, which is the input of the tables one wants to create; the method with then be referred to as data perturbation - input perturbation being the better but uncommonly used expression.
+~\\
+Possible methods are:
+\begin{itemize}
+\item rounding;
+      \item random perturbation;
+      \item disclosure control methods for microstatistics applied to macrostatistics.''\parencite{oecd_oecd_nodate}
+\end{itemize}
     }
 }
 
 \newglossaryentry{inferential_disclosure}
 {
     name=Inferential Disclosure,
-    description={Blank.
+    description={``Inferential disclosure occurs when information can
+    be inferred with high confidence from statistical properties of
+    the released data. For example, the data may show a high
+    correlation between income and purchase price of a home. As the
+    purchase price of a home is typically public information, a third
+    party might use this information to infer the income of a data
+    subject.''\parencite{oecd_oecd_nodate}\\
+    ~\\
+    Although \parencite{oecd_oecd_nodate} states that ``In general,
+    NSIs are not concerned with inferential disclosure,'' the 
+    U.S. Census Bureau \emph{is} concerned with inferential disclosure when
+    the inferences can be made about the data provided by a specific
+    person or establishment, in keeping with the U.S. Census Bureau's
+    obligation under Title 13.
     }
 }
 
@@ -682,7 +705,7 @@
 \newglossaryentry{validation_server}
 {
     name=Validation Server,
-    description={A method used to verify the validity of analyses run on protected data, typically through a computer server. Validation servers send back  (protected) results from running the same analysis on the confidential data. Two examples of data produced by the Census Bureau with attached validation servers are the \href{https://www.census.gov/programs-surveys/ces/data/public-use-data/synthetic-longitudinal-business-database/validating-results.html}{SynLBD} and the \href{https://www.census.gov/programs-surveys/sipp/guidance/sipp-synthetic-beta-data-product.html}{SSB}. There is a close similarity to a \gls{remote-submission-system}.    } 
+    description={A method used to verify the validity of analyses run on protected data, typically through a computer server. Validation servers send back  (protected) results from running the same analysis on the confidential data. Two examples of data produced by the U.S. Census Bureau with attached validation servers are the \href{https://www.census.gov/programs-surveys/ces/data/public-use-data/synthetic-longitudinal-business-database/validating-results.html}{SynLBD} and the \href{https://www.census.gov/programs-surveys/sipp/guidance/sipp-synthetic-beta-data-product.html}{SSB}. There is a close similarity to a \gls{remote-submission-system}.    } 
 }
 
 \newglossaryentry{remote-submission-system}
@@ -715,6 +738,13 @@
 \newglossaryentry{structural_zero}
 {
     name=Structural Zero,
+    description={Blank.
+    } 
+}
+
+\newglossaryentry{sampling_zero}
+{
+    name=Sampling Zero,
     description={Blank.
     } 
 }
@@ -811,20 +841,20 @@ description={Blank.}
   %Source: \url{https://www.archives.gov/cui/about}\\
   \\
   \\
-  Controlled Unclassified Information at the US Census Bureau includes information that is protected under \gls{title13} or \gls{title26}, as well as personnel information protected under \gls{title5}. }
+  Controlled Unclassified Information at the U.S. Census Bureau includes information that is protected under \gls{title13} or \gls{title26}, as well as personnel information protected under \gls{title5}. }
 }
 
 \newglossaryentry{title13}
 {
 name={Title 13, U.S.C.},
 text=Title 13,
-description={The Census Bureau is bound by Title 13 of the United States Code (13 U.S.C.A. \P 1 et seq. [2007]). These laws not only provide authority for the work we do, but also provide strong protection for the information we collect from individuals and businesses.\\
+description={The U.S. Census Bureau is bound by Title 13 of the United States Code (13 U.S.C.A. \P 1 et seq. [2007]). These laws not only provide authority for the work we do, but also provide strong protection for the information we collect from individuals and businesses.\\
 \\
 Title 13 provides the following protections to individuals and businesses:
 \begin{itemize}
 \item     Private information is never published. It is against the law to disclose or publish any private information that identifies an individual or business such, including names, addresses (including GPS coordinates), Social Security Numbers, and telephone numbers.
-\item     The Census Bureau collects information to produce statistics. Personal information cannot be used against respondents by any government agency or court.
-\item   Census Bureau employees are sworn to protect confidentiality. People sworn to uphold Title 13 are legally required to maintain the confidentiality of your data. Every person with access to your data is sworn for life to protect your information and understands that the penalties for violating this law are applicable for a lifetime.
+\item     The U.S. Census Bureau collects information to produce statistics. Personal information cannot be used against respondents by any government agency or court.
+\item   U.S. Census Bureau employees are sworn to protect confidentiality. People sworn to uphold Title 13 are legally required to maintain the confidentiality of your data. Every person with access to your data is sworn for life to protect your information and understands that the penalties for violating this law are applicable for a lifetime.
 \item    Violating the law is a serious federal crime. Anyone who violates this law will face severe penalties, including a federal prison sentence of up to five years, a fine of up to \$250,000, or both.
 \end{itemize} \parencite{us_code_title_1954}
 }
@@ -855,14 +885,33 @@ description={Blank. Abbreviated as FTI.}
 
 \newglossaryentry{IRS}
 {
-name={Internal Revenue Service},
-description={Blank. Abbreviated as IRS.}
+  name={Internal Revenue Service},
+  description={Unless otherwise specified, this refers to the bureau of
+    the Department of the Treasury of the United States. Abbreviated as IRS.}
 }
 
 \newglossaryentry{title5}
 {
 name=Title 5,
 description={Title 5 U.S.C. More details.}
+}
+
+% Source: https://nnlm.gov/data/thesaurus/data-enclave
+\newglossaryentry{data-enclave}
+{
+name=data enclave,
+description={
+A data enclave is a secure network through which confidential data, such as identifiable information from census data, can be stored and disseminated. }
+}
+
+\newglossaryentry{virtual-data-enclave}
+{name=virtual data enclave,
+description={A form of \gls{data-enclave}. In a virtual \gls{data-enclave} a researcher can access the data from their own computer but cannot download or remove it from the remote server. }
+}
+
+\newglossaryentry{physical-data-enclave}
+{name=physical data enclave,
+description={A form of \gls{data-enclave}. Typically, a user is required to access the data from a monitored room where the data is stored on non-networked computers, or where data is accessed on a  specific secure network. }
 }
 
 

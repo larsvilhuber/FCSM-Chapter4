@@ -1,33 +1,120 @@
 
-@article{barrientos_providing_2018,
-	title = {Providing access to confidential research data through synthesis and verification: {An} application to data on employees of the {U}.{S}. federal government},
-	volume = {12},
-	issn = {1932-6157},
-	shorttitle = {Providing access to confidential research data through synthesis and verification},
-	url = {https://projecteuclid.org/euclid.aoas/1532743488},
-	doi = {10.1214/18-AOAS1194},
+@misc{iso_iso_nodate,
+	title = {{ISO} 25237:2017: {Health} informatics - {Pseudonymization}},
+	shorttitle = {{ISO} 25237:2017(en)},
+	url = {https://www.iso.org/standard/63553.html},
+	abstract = {Health informatics — Pseudonymization},
 	language = {en},
-	number = {2},
-	urldate = {2020-03-12},
-	journal = {The Annals of Applied Statistics},
-	author = {Barrientos, Andrés F. and Bolton, Alexander and Balmat, Tom and Reiter, Jerome P. and de Figueiredo, John M. and Machanavajjhala, Ashwin and Chen, Yan and Kneifel, Charley and DeLong, Mark},
-	month = jun,
-	year = {2018},
-	pages = {1124--1156}
+	urldate = {2020-03-19},
+	journal = {ISO},
+	author = {{ISO}}
 }
 
-@article{barrientos_providing_2018-1,
-	title = {Providing {Access} to {Confidential} {Research} {Data} {Through} {Synthesis} and {Verification}: {An} {Application} to {Data} on {Employees} of the {U}.{S}. {Federal} {Government}},
-	shorttitle = {Providing {Access} to {Confidential} {Research} {Data} {Through} {Synthesis} and {Verification}},
-	url = {http://arxiv.org/abs/1705.07872},
-	abstract = {Data stewards seeking to provide access to large-scale social science data face a difficult challenge. They have to share data in ways that protect privacy and confidentiality, are informative for many analyses and purposes, and are relatively straightforward to use by data analysts. One approach suggested in the literature is that data stewards generate and release synthetic data, i.e., data simulated from statistical models, while also providing users access to a verification server that allows them to assess the quality of inferences from the synthetic data. We present an application of the synthetic data plus verification server approach to longitudinal data on employees of the U.S. federal government. As part of the application, we present a novel model for generating synthetic career trajectories, as well as strategies for generating high dimensional, longitudinal synthetic datasets. We also present novel verification algorithms for regression coefficients that satisfy differential privacy. We illustrate the integrated use of synthetic data plus verification via analysis of differentials in pay by race. The integrated system performs as intended, allowing users to explore the synthetic data for potential pay differentials and learn through verifications which findings in the synthetic data hold up and which do not. The analysis on the confidential data reveals pay differentials across races not documented in published studies.},
-	urldate = {2020-03-12},
-	journal = {arXiv:1705.07872 [stat]},
-	author = {Barrientos, Andrés F. and Bolton, Alexander and Balmat, Tom and Reiter, Jerome P. and de Figueiredo, John M. and Machanavajjhala, Ashwin and Chen, Yan and Kneifel, Charley and DeLong, Mark},
-	month = jun,
-	year = {2018},
-	note = {arXiv: 1705.07872},
-	keywords = {Statistics - Applications}
+@misc{oecd_oecd_nodate,
+	title = {The {OECD} {Glossary} of {Statistical} {Terms}},
+	url = {https://stats.oecd.org/glossary/},
+	urldate = {2020-03-19},
+	author = {{OECD}}
+}
+
+@misc{nist_information_technology_laboratory_glossary_nodate,
+	title = {Glossary of {Computer} {Security} {Terms}},
+	url = {https://csrc.nist.gov/glossary},
+	urldate = {2020-03-19},
+	author = {{NIST Information Technology Laboratory}}
+}
+
+@inproceedings{dwork_calibrating_2006,
+	address = {Berlin, Heidelberg},
+	title = {Calibrating {Noise} to {Sensitivity} in {Private} {Data} {Analysis}},
+	volume = {3876},
+	doi = {10.1007/11681878_14},
+	urldate = {2020-03-20},
+	booktitle = {Theory of {Cryptography}},
+	publisher = {Springer Berlin Heidelberg},
+	author = {Dwork, Cynthia and McSherry, Frank and Nissim, Kobbi and Smith, Adam},
+	year = {2006},
+	pages = {265--284}
+}
+
+@article{dwork_calibrating_2016,
+	title = {Calibrating {Noise} to {Sensitivity} in {Private} {Data} {Analysis}},
+	volume = {7},
+	doi = {10.29012/jpc.v7i3.405},
+	abstract = {We continue a line of research initiated in Dinur and Nissim (2003); Dwork and Nissim (2004); and Blum et al. (2005) on privacy-preserving statistical databases. Consider a trusted server that holds a database of sensitive information. Given a query function \$f\$ mapping databases to reals, the so-called \{{\textbackslash}textbackslashem true answer\} is the result of applying \$f\$ to the database. To protect privacy, the true answer is perturbed by the addition of random noise generated according to a carefully chosen distribution, and this response, the true answer plus noise, is returned to the user. Previous work focused on the case of noisy sums, in which \$f = {\textbackslash}sum\_i g(x\_i)\$, where \$x\_i\$ denotes the \$i\$th row of the database and \$g\$ maps database rows to \$[0,1]\$. We extend the study to general functions \$f\$, proving that privacy can be preserved by calibrating the standard deviation of the noise according to the \{{\textbackslash}textbackslashem sensitivity\} of the function \$f\$. Roughly speaking, this is the amount that any single argument to \$f\$ can change its output. The new analysis shows that for several particular applications substantially less noise is needed than was previously understood to be the case. The first step is a very clean definition of privacy—now known as differential privacy—and measure of its loss. We also provide a set of tools for designing and combining differentially private algorithms, permitting the construction of complex differentially private analytical tools from simple differentially private primitives. Finally, we obtain separation results showing the increased value of interactive statistical release mechanisms over non-interactive ones.},
+	number = {3},
+	journal = {Journal of Privacy and Confidentiality},
+	author = {Dwork, Cynthia and McSherry, Frank and Nissim, Kobbi and Smith, Adam},
+	year = {2016}
+}
+
+@techreport{freiman_formal_2017,
+	title = {Formal {Privacy} and {Synthetic} {Data} for the {American} {Community} {Survey}},
+	url = {https://www.census.gov/library/working-papers/2018/adrm/formal-privacy-synthetic-data-acs.html},
+	language = {EN-US},
+	urldate = {2020-03-20},
+	institution = {U.S. Census Bureau},
+	author = {Freiman, Michael H. and Lauger, Amy D. and Reiter, Jerome P.},
+	year = {2017}
+}
+
+@misc{us_code_title_1954,
+	title = {Title 13 -- {Census}},
+	url = {https://www.govinfo.gov/content/pkg/USCODE-2007-title13/pdf/USCODE-2007-title13.pdf},
+	urldate = {2020-03-21},
+	author = {{U.S. Code}},
+	year = {1954},
+	note = {as amended 2007}
+}
+
+@misc{us_census_bureau_title_nodate,
+	title = {Title 26, {U}.{S}. {Code} - {History} - {U}.{S}. {Census} {Bureau}},
+	url = {https://www.census.gov/history/www/reference/privacy_confidentiality/title_26_us_code_1.html},
+	abstract = {Body of laws codifying tax laws and the protection of these data.},
+	language = {EN-US},
+	urldate = {2020-03-21},
+	author = {{US Census Bureau}},
+	note = {Library Catalog: www.census.gov}
+}
+
+@article{dwork_algorithmic_2013,
+	title = {The {Algorithmic} {Foundations} of {Differential} {Privacy}},
+	volume = {9},
+	url = {http://www.nowpublishers.com/articles/foundations-and-trends-in-theoretical-computer-science/TCS-042},
+	doi = {10.1561/0400000042},
+	language = {en},
+	number = {3-4},
+	urldate = {2020-03-19},
+	journal = {Foundations and Trends® in Theoretical Computer Science},
+	author = {Dwork, Cynthia and Roth, Aaron},
+	year = {2013}
+}
+
+@inproceedings{mcsherry_mechanism_2007,
+	address = {Providence, RI, USA},
+	title = {Mechanism {Design} via {Differential} {Privacy}},
+	isbn = {978-0-7695-3010-9},
+	url = {http://ieeexplore.ieee.org/document/4389483/},
+	doi = {10.1109/FOCS.2007.66},
+	urldate = {2020-03-20},
+	booktitle = {48th {Annual} {IEEE} {Symposium} on {Foundations} of {Computer} {Science} ({FOCS}'07)},
+	publisher = {IEEE},
+	author = {McSherry, Frank and Talwar, Kunal},
+	month = oct,
+	year = {2007},
+	pages = {94--103}
+}
+
+@misc{noauthor_about_2016,
+	title = {About {Controlled} {Unclassified} {Information} ({CUI})},
+	url = {https://www.archives.gov/cui/about},
+	abstract = {Controlled Unclassified Information (CUI) is information that requires safeguarding or dissemination controls pursuant to and consistent with applicable law, regulations, and government-wide policies but is not classified under Executive Order 13526 or the Atomic Energy Act, as amended. Executive Order 13556 "Controlled Unclassified Information" (the Order), establishes a program for managing CUI across the Executive branch and designates the National Archives and Records Administration (NARA) as Executive Agent to implement the Order and oversee agency actions to ensure compliance.},
+	language = {en},
+	urldate = {2020-03-20},
+	journal = {National Archives},
+	month = aug,
+	year = {2016},
+	note = {Library Catalog: www.archives.gov}
 }
 
 @article{reiter_verification_2009,
@@ -45,140 +132,46 @@
 	pages = {1475--1482}
 }
 
-@article{abowd_economic_2015,
-	title = {Economic {Analysis} and {Statistical} {Disclosure} {Limitation}},
-	volume = {50},
-	issn = {0007-2303},
-	url = {http://www.brookings.edu/about/projects/bpea/papers/2015/economic-analysis-statistical-disclosure-limitation},
-	doi = {10.1353/eca.2016.0004},
-	abstract = {This paper explores the consequences for economic research of methods used by data publishers to protect the privacy of their respondents. We review the concept of statistical disclosure limitation for an audience of economists who may be unfamiliar with these methods. We characterize what it means for statistical disclosure limitation to be ignorable. When it is not ignorable, we consider the effects of statistical disclosure limitation for a variety of research designs common in applied economic research. Because statistical agencies do not always report the methods they use to protect confidentiality, we also characterize settings in which statistical disclosure limitation methods are discoverable; that is, they can be learned from the released data. We conclude with advice for researchers, journal editors, and statistical agencies.},
-	number = {1},
-	journal = {Brookings Papers on Economic Activity},
-	author = {Abowd, John M and Schmutte, Ian M},
-	year = {2015},
-	keywords = {SDL, Sloan-annual-report, Statistical Disclosure Limitation, primary},
-	pages = {221--267}
+@techreport{desai_five_2016,
+	type = {Working {Paper}},
+	title = {Five {Safes}: designing data access for research},
+	url = {http://eprints.uwe.ac.uk/28124},
+	abstract = {What is the best way of managing access to sensitive data? This is not a straightforward question, as it involves the interaction of legal, technical, statistical and, above all, human components to produce a solution. This paper introduces a modelling tool designed to simplify and structure such decision-making.},
+	language = {en},
+	institution = {University of the West of England},
+	author = {Desai, Tanvi and Ritchie, Felix and Welpton, Richard},
+	year = {2016},
+	keywords = {confidentiality, data  management, data access, data management, security  engineering, security engineering, statistical  disclosure control, statistical disclosure control},
+	pages = {27}
 }
 
-@article{kinney_towards_2011,
-	title = {Towards {Unrestricted} {Public} {Use} {Business} {Microdata}: {The} {Synthetic} {Longitudinal} {Business} {Database}},
-	volume = {79},
-	issn = {0306-7734, 1751-5823},
-	url = {http://dx.doi.org/10.1111/j.1751-5823.2011.00153.x},
-	doi = {10.1111/j.1751-5823.2011.00153.x},
-	abstract = {Dans la plupart des pays, les instituts nationaux de statistique ne publient pas les micro-données relatives aux entreprises. Les publier présente en effet un risque trop élevé de rupture de confidentialité. Ce risque peut être évité par un recours à des données synthétiques—des données simulées à partir de modèles statistiques reproduisant la loi des véritables micro-données. Dans cet article, nous décrivons une application de cette stratégie à la création d'une telle base de données à partir des résultats du recensement économique annuel des entreprises américaines. Cette base de donnée comprend plus de 20 millions d'entreprises sur une période remontant à 1976. L'U.S. Bureau of Census et l'Internal Revenue Service ont récemment approuvé la publication sous forme synthétique de ces micro-données, faisant ainsi de la Longitudinal Business Database le premier ensemble de micro-données de ce type accessible au public aux Etats-Unis. Nous expliquons la façon dont cette base de données synthétiques a été créée, comment sa validité a été testée, et comment son risque de rupture de confidentialité a étéévalué.},
-	number = {3},
-	journal = {International statistical review},
-	author = {Kinney, Satkartar K and Reiter, Jerome P and Reznek, Arnold P and Miranda, Javier and Jarmin, Ron S and Abowd, John M},
-	month = dec,
-	year = {2011},
-	keywords = {Economic census, Linked admin, data confidentiality, disclosure limitation, synthetic data},
-	pages = {362--384}
-}
-
-@article{reiter_significance_2005,
-	title = {Significance tests for multi-component estimands from multiply imputed, synthetic microdata},
-	volume = {131},
-	issn = {0378-3758},
-	url = {http://www.sciencedirect.com/science/article/pii/S0378375804000771},
-	doi = {10.1016/j.jspi.2004.02.003},
-	abstract = {Abstract To limit the risks of disclosures when releasing data to the public, it has been suggested that statistical agencies release multiply imputed, synthetic microdata. For example, the released microdata can be fully synthetic, comprising random samples of units from the sampling frame with simulated values of variables. Or, the released microdata can be partially synthetic, comprising the units originally surveyed with some collected values, e.g. sensitive values at high risk of disclosure or values of key identifiers, replaced with multiple imputations. This article presents inferential methods for synthetic data for multi-component estimands, in particular procedures for Wald and likelihood ratio tests. The performance of the procedures is illustrated with simulation studies.},
-	number = {2},
-	journal = {Journal of statistical planning and inference},
-	author = {Reiter, J P},
-	month = may,
-	year = {2005},
-	keywords = {Disclosure, Multiple imputation, Significance tests, confidentiality, synthetic data},
-	pages = {365--377}
-}
-
-@book{us_census_bureau_sipp_2015,
-	address = {Washington, DC and Ithaca, NY, USA},
-	title = {{SIPP} {Synthetic} {Beta} {Version} 6.0.2},
-	url = {http://www2.vrdc.cornell.edu/news/data/sipp-synthetic-beta-file/},
+@techreport{us_census_bureau_data_2020,
+	type = {mimeo},
+	title = {Data {Metrics} for 2020 {Disclosure} {Avoidance}},
+	url = {https://www2.census.gov/programs-surveys/decennial/2020/program-management/data-product-planning/disclosure-avoidance-system/2020-03-25-data-metrics-2020-da.pdf},
+	urldate = {2020-03-27},
 	author = {{U.S. Census Bureau}},
-	year = {2015}
+	month = mar,
+	year = {2020}
 }
 
-@article{miranda_using_2016,
-	title = {Using partially synthetic microdata to protect sensitive cells in business statistics},
-	volume = {32},
-	url = {https://content.iospress.com/articles/statistical-journal-of-the-iaos/sji963},
-	doi = {10.3233/SJI-160963},
-	abstract = {We describe and analyze a method that blends records from both observed and synthetic microdata into public-use tabulations on establishment statistics. The resulting tables use synthetic data only in potentially sensitive cells. We describe different algorithms, and present preliminary results when applied to the Census Bureau's Business Dynamics Statistics and Synthetic Longitudinal Business Database, highlighting accuracy and protection afforded by the method when compared to existing public-use tabulations (with suppressions).},
-	number = {1},
-	journal = {Statistical Journal of the International Association for Official Statistics},
-	author = {Miranda, Javier and Vilhuber, Lars},
-	year = {2016},
-	keywords = {SDL, statistical disclosure limitation},
-	pages = {69--80}
-}
-
-@article{drechsler_new_2012,
-	title = {New data dissemination approaches in old {Europe} – synthetic datasets for a {German} establishment survey},
-	volume = {39},
-	issn = {0266-4763, 1360-0532},
-	url = {http://www.tandfonline.com/doi/abs/10.1080/02664763.2011.584523},
-	doi = {10.1080/02664763.2011.584523},
+@article{barrientos_providing_2018,
+	title = {Providing access to confidential research data through synthesis and verification: {An} application to data on employees of the {U}.{S}. federal government},
+	volume = {12},
+	issn = {1932-6157},
+	shorttitle = {Providing access to confidential research data through synthesis and verification},
+	url = {https://projecteuclid.org/euclid.aoas/1532743488},
+	doi = {10.1214/18-AOAS1194},
+	abstract = {Data stewards seeking to provide access to large-scale social science data face a difficult challenge. They have to share data in ways that protect privacy and confidentiality, are informative for many analyses and purposes, and are relatively straightforward to use by data analysts. One approach suggested in the literature is that data stewards generate and release synthetic data, i.e., data simulated from statistical models, while also providing users access to a verification server that allows them to assess the quality of inferences from the synthetic data. We present an application of the synthetic data plus verification server approach to longitudinal data on employees of the U.S. federal government. As part of the application, we present a novel model for generating synthetic career trajectories, as well as strategies for generating high dimensional, longitudinal synthetic datasets. We also present novel verification algorithms for regression coefficients that satisfy differential privacy. We illustrate the integrated use of synthetic data plus verification via analysis of differentials in pay by race. The integrated system performs as intended, allowing users to explore the synthetic data for potential pay differentials and learn through verifications which findings in the synthetic data hold up and which do not. The analysis on the confidential data reveals pay differentials across races not documented in published studies.},
 	language = {en},
 	number = {2},
-	urldate = {2018-07-22},
-	journal = {Journal of Applied Statistics},
-	author = {Drechsler, Jörg},
-	month = feb,
-	year = {2012},
-	pages = {243--265}
-}
-
-@misc{vilhuber_usage_2016,
-	type = {Presentation},
-	title = {Usage and outcomes of the {Synthetic} {Data} {Server}},
-	url = {http://hdl.handle.net/1813/43883},
-	language = {en},
-	urldate = {2018-07-22},
-	author = {Vilhuber, Lars and Abowd, John},
-	year = {2016}
-}
-
-@article{nowok_synthpop_2016,
-	title = {synthpop: {Bespoke} {Creation} of {Synthetic} {Data} in {R}},
-	volume = {74},
-	issn = {1548-7660},
-	url = {https://www.jstatsoft.org/v074/i11},
-	doi = {10.18637/jss.v074.i11},
-	abstract = {In many contexts, confidentiality constraints severely restrict access to unique and valuable microdata. Synthetic data which mimic the original observed data and preserve the relationships between variables but do not contain any disclosive records are one possible solution to this problem. The synthpop package for R, introduced in this paper, provides routines to generate synthetic versions of original data sets. We describe the methodology and its consequences for the data characteristics. We illustrate the package features using a survey data example.},
-	number = {11},
-	journal = {Journal of Statistical Software, Articles},
-	author = {Nowok, Beata and Raab, Gillian and Dibben, Chris},
-	year = {2016},
-	keywords = {CART, R, UK longitudinal studies, disclosure control, synthetic data},
-	pages = {1--26}
-}
-
-@techreport{vilhuber_proceedings_2017,
-	type = {Document},
-	title = {Proceedings from the {Synthetic} {LBD} {International} {Seminar}},
-	url = {http://digitalcommons.ilr.cornell.edu/ldi/44/},
-	abstract = {On May 9, 2017, we hosted a seminar to discuss the conditions necessary to implement the SynLBD approach with interested parties, with the goal of providing a straightforward toolkit to implement the same procedure on other data. The proceedings summarize the discussions during the workshop.},
-	number = {44},
-	institution = {Labor Dynamics Institute, Cornell University},
-	author = {Vilhuber, Lars and Kinney, Saki and Schmutte, Ian},
-	year = {2017}
-}
-
-@article{reiter_verification_2009-1,
-	title = {Verification servers: {Enabling} analysts to assess the quality of inferences from public use data},
-	volume = {53},
-	issn = {01679473},
-	shorttitle = {Verification servers},
-	url = {https://linkinghub.elsevier.com/retrieve/pii/S0167947308004751},
-	doi = {10.1016/j.csda.2008.10.006},
-	language = {en},
-	number = {4},
 	urldate = {2020-03-12},
-	journal = {Computational Statistics \& Data Analysis},
-	author = {Reiter, Jerome P. and Oganian, Anna and Karr, Alan F.},
-	month = feb,
-	year = {2009},
-	pages = {1475--1482}
+	journal = {The Annals of Applied Statistics},
+	author = {Barrientos, Andrés F. and Bolton, Alexander and Balmat, Tom and Reiter, Jerome P. and de Figueiredo, John M. and Machanavajjhala, Ashwin and Chen, Yan and Kneifel, Charley and DeLong, Mark},
+	month = jun,
+	year = {2018},
+	note = {tex.ids: barrientosProvidingAccessConfidential2018a
+arXiv: 1705.07872},
+	keywords = {Statistics - Applications},
+	pages = {1124--1156}
 }

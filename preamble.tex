@@ -4,10 +4,40 @@
 \usepackage{times,avant}
 \usepackage{comment}
 \usepackage{datetime}
+\usepackage[dvipsnames]{xcolor} 
+\usepackage[%
+plainpages=false,%
+colorlinks,% removes the boxes around links
+linkcolor=Blue,%
+urlcolor=black,%
+filecolor=black,%
+citecolor=Blue,%   requires xcolor with option dvipsnames
+pdfpagemode=UseOutlines%
+]{hyperref}
 
+\usepackage[style=chicago-authordate,sorting=ydnt,maxnames=10,backend=biber,natbib]{biblatex}
+% Clear some stuff from the bibliography
+\AtEveryBibitem{%
+        \clearfield{day}%
+        \clearfield{month}%
+        \clearfield{endday}%
+        \clearfield{endmonth}%
+    \clearlist{language}%
+    \clearfield{issn}%
+    \clearfield{eprint}% - adjust if necessary
+    \iffieldundef{doi}{}{\clearfield{url}}% remove URL field if DOI present    
+}
+% Bibliography
+
+\addbibresource{from_zotero.bib}
+\addbibresource{dg2-new.bib}
+
+\usepackage{booktabs}
+
+%%%%% START ANNA's CONFIG
 %%\usepackage{mathrsfs}
 %\usepackage[mtpluscal,mtplusscr,T1]{mathtime}
-\usepackage[round,authoryear]{natbib}
+%\usepackage[round,authoryear]{natbib}
 %%
 \usepackage[pdftex]{graphicx}
 %%
@@ -45,10 +75,11 @@
 % \mathscr changed to \mathcal in the following by APS
 \def\DB{\ensuremath{\mathbf{D}}} %% Database
 \def\QS{\ensuremath{\mathscr{Q}}} %% Query space
-\def\DR{\ensuremath{\mathbf{DR}}} %% Disclosure risk
-\def\DU{\ensuremath{\mathbf{DU}}} %% Data utility
+\def\DR{\ensuremath{\mathbf{R}}} %% Disclosure risk
+\def\DU{\ensuremath{\mathbf{U}}} %% Data utility
 \def\DD{\ensuremath{\mathbf{DD}}} %% Data distortion
 \def\RS{\ensuremath{\mathbf{R}}} %% Release space
+\def\MS{\ensuremath{\mathbf{M}}} %% Release space
 \def\DBORIG{\ensuremath{{D}_{\mathrm{orig}}}} %% Database
 \def\DBPOST{\ensuremath{\mathscr{D}_{\mathrm{post}}}} %% Database
 \def\DBREL{\ensuremath{D_{\mathrm{rel}}}} %% Released database
@@ -72,7 +103,6 @@
     
 %%%%%% END ANNA CONFIG
 
-\usepackage{hyperref}
 
 
 \begin{comment}
@@ -88,12 +118,28 @@ must now include a call to makeglossaries followed by at least one
 further invocation of latex or pdflatex -
 https://en.wikibooks.org/wiki/LaTeX/Glossary
 \end{comment}
-\usepackage[toc, nonumberlist, nopostdot, xindy]{glossaries}
+\usepackage[toc, nopostdot, xindy]{glossaries}
 \usepackage{glossaries-extra}
 \glssetcategoryattribute{general}{glossname}{title}
 
 \makeglossaries
 \input{vocabulary}
+\input{abbreviations}
+
+%% Additional entries
+
+\newglossaryentry{rounding}
+{
+    name=rounding,
+    description=See \gls{perturbation-based Methods}
+    }
 
 % Must be issued before \printglossaries
 \setglossarystyle{altlisthypergroup}
+
+
+%%%% FOR PANDOC CONVERSIONS
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+  

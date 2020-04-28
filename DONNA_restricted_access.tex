@@ -1,0 +1,139 @@
+\subsection{ACCESS TIER: PROTECTED}
+\begin{itemize}
+\item{Restricted-use data behind firewall with output controlled for disclosures};
+\item{Automated output from SDL software with use restrictions} E.g. web-based query system.
+\item{Licensing program} User controlled infrastructure.
+\end{itemize}
+
+Access to this data is not automatic but requires one or more additional steps such as, but not limited to, a data use agreement, license, system or website account, and automated SDL tools with built-in limitations on allowable output. The number of additional requirements for access is intended to be more than the public access, but less burdensome than the restricted tier. The lowered burden should improve access, timeliness, and other aspects of data quality in a meaningful way to the data customer.
+
+\subsubsection{Web-Based Query Systems} 
+Query systems allow users to design queries to generate customized tabulations (WP 22). Also have predefined queries.
+
+*Data stored in query systems can be protected and restricted.
+
+Pros *
+\begin{itemize}
+\item 	Run queries on data more detailed than PUFs (varies by agency—could be restricted data or perturbed data from public use files) 
+\begin{itemize}
+    \item Increases utility, improves data quality
+\end{itemize}	
+\item 	Permits a wider range of analyses than does releasing only data summaries and it provides results based on actual rather than simulated microdata (Gomatam, 2005, 164)
+\item 	Developer can build in SDL (see Gomatam, 2005, 167)
+\end{itemize}
+
+Cons 
+\begin{itemize}
+\item 	No direct access to the microdata (may vary by agency)
+\begin{itemize}
+    \item 	Decrease utility
+\end{itemize}
+\item 	May not prevent disclosures (table splicing; can do this in CDC Wonder) 
+\item 	Built in disclosure technique can reduce utility and quality (Gomatam, 2005, 167-168)
+\begin{itemize}
+    \item Top coding, swapping, adding noise (WP 22)
+    \item Prohibit key identifiers (age, race, sex) as outcome variables but permit as predictors (Gomatam, 2005, 167)
+    \item Disallow any transformations (Gomatam 2005, 173)
+\end{itemize}
+\item 	Functionality is limited to what the developer allows to be run in the query system
+\item 	Expensive to implement and maintain (Haggard, 2006, 189)
+\end{itemize}
+
+New queries vs. pre-computed queries 
+
+Examples of online query systems: 
+\begin{itemize}
+\item 	NASS (Karr)
+\item 	Australian Bureau of Statistics, TableBuilder (Chipperfield, 2019)
+\item 	CDC’s Wonder
+\item 	BLS ??
+\item The \href{https://microdata.no}{microdata.no} system provides a facility to analyze Norwegian register data. The system allows for descriptive statistics as well as a small set of regression methods and  analysis of variance. Automated anonymization processes have been implemented, and microdata cannot be viewed. Researchers must be affiliated with (Norwegian) institutions having an agreement with Statistics Norway. A custom programming interface is used, based on Python augmented with four (commonly used) Python modules, but limited to certain functionality. 
+\end{itemize}
+
+\subsection{ACCESS TIER: RESTRICTED ACCESS}
+\begin{itemize}
+\item{Licensing program} (user controlled infrastructure)
+\item{Virtual Data Enclave}
+\item{Physical Data Enclave}
+\end{itemize}
+
+This is the default tier for containing data collected under a pledge of confidentiality. Critical to its modernization is to include more access options using newer technology such as commercial cloud computing and remote access/virtual enclave. This should also include viable options not constrained by the current system of Federal Statistical Research Data Centers (FSRDCs).
+
+\subsubsection{Virtual and Physical Data Enclaves }
+There are two types of \glspl{data-enclave}: 1) \glspl{physical-data-enclave}; and 2) \glspl{virtual-data-enclave}. Both types of enclaves allow researchers to access restricted use data under highly restricted conditions which reduces disclosure risks. Some data enclaves allow researcher to access the full data sets while others require researchers to prepare data dictionaries and limit access to only the variables the researchers need to complete their analysis. 
+
+The primary difference between the two types of data enclaves is the process by which the data are accessed. In physical data enclaves researchers must physically sit in a controlled environment at the data owner’s office or site where the data are stored. Virtual data enclaves allow researchers to access the restricted use data remotely over secure electronic lines via their personal computers while they sit in their own offices or homes. The output generated is returned to the researchers.
+
+Both types of data enclaves increase the usability of the data. Researchers are permitted to access data not publicly available under controlled conditions. For example, [list types of data that cannot be publicly accessed: genetics data, geocoded data, detailed geography, exact dates, detailed race, income]. 
+
+Conversely, both types of data enclaves can also decrease the utility of the data. The process for requesting access to restricted use data can be arduous and thus reduce the number of researchers who can access the data. Researchers must submit research proposals containing detailed information about the research project, the hypotheses to be tested, the data set and variables to be used in the analysis,
+the empirical methods to be used, and the specific data outputs that will result from the project thus limiting exploratory analyses. Research proposals are reviewed and approved by a review committee which can take several weeks or months to complete. Additionally, users must agree to terms and conditions governing the access and use of the confidential data as well as sign nondisclosure affidavits. Some researchers are required to complete background investigations, Special Sworn Status, be citizens of the U.S.,  …etc.  Furthermore, there are costs associated with accessing restricted use data via data enclaves [include examples]. Costs reduce the utility of the data because some researchers may not have funding to complete research. Most students completing graduate or doctoral level research, living on fixed incomes, may not be able to afford to access data in enclaves. 
+
+Both types of data enclaves allow researchers to improve the accuracy and precision of their estimates. Data available in enclaves are not subject to the statistical disclosure limitation methods that public use files are subject to prior to release. For example, detailed race/ethnicity and geography measures are typically not available on public use files due to disclosure concerns. These types of measures are available to researchers in data enclaves thus increasing the accuracy and prevision of estimates.  [Might include examples of research completed in RDCs that could not be completed using PUFs].
+
+Data quality can also be decreased when accessing restricted use data in data enclaves. Extreme values or values representing an individual are generally removed from analysis (e.g. minima, maxima, medians). These values might be useful to researchers doing sensitivity analysis. {need to expand this section}
+
+\paragraph{Examples of physical enclaves}
+\begin{itemize}
+    \item BLS and NCHS each have a ``research data center'' at their headquarters, which are physical enclaves (?)
+\end{itemize}
+
+\paragraph{Examples of virtual enclaves}
+\begin{itemize}
+    \item The \href{https://www.norc.org/Research/Capabilities/Pages/data-enclave.aspx}{NORC Data Enclave} is used by the two \href{https://www.norc.org/Research/Projects/Pages/usda-ers-data-enclave.aspx}{USDA statistical agencies}
+    \item The Inter-university Consortium for Political and Social Research (ICPSR) Virtual Data Enclave is used by the \href{https://www.icpsr.umich.edu/icpsrweb/content/NACJD/index.html}{Bureau of Justice Statistics' National Archive of Criminal Justice Data}. 
+\end{itemize}
+
+\paragraph{Examples of hybrid enclaves}
+\begin{itemize}
+    \item the FSRDC system is accessed from secure rooms, which in turn provide access to a secure network, with all data stored in a central location. It is thus a hybrid of a physical enclave housing a virtual enclave. About a dozen statistical agencies provide access to some of their data through this system. Output control varies by agency.
+    \item the French system \href{https://casd.eu}{Centre d'acc\'es s\'ecuris\'e de donn\'ees (CASD)} is a virtual enclave, with access devices typically restricted to dedicated physical devices located in university offices. Much of French administrative data can be accessed through this system. Output control varies by agency.
+    \item the \href{https://fdz.iab.de/}{German Research Data Centre (FDZ)} of the German Federal Employment Agency (BA) at the Institute for Employment Research (IAB) uses multiple access modes, one of which has dedicated thin clients located in designated access-controlled offices (typically at universities), connecting to an agency-controlled virtual desktop infrastructure. Output control is manual.
+\end{itemize}
+
+\subsubsection{Licensing Program (user controlled infrastructure)}
+
+Licensing agreements permit a researcher to use restricted data offsite, but under highly restricted
+conditions, as spelled out in a legally binding agreement [text from Restricted Access Procedures]. Arrangements that place restrictions on who has access, at what locations, and for what purposes access is allowed normally require written agreements between agency and users. These agreements usually subject the user to fines, being denied access in the future and/or other penalties for improper disclosure of individual information and other violations of the agreed conditions of use. Users may be subject to external audits conducted by the agency to assure terms of the agreement are being followed. Users in violation may be required to pay fines or be subject to other legal penalties [text from WP 22].
+
+Licensing agreements require:
+\begin{itemize}
+\item a demonstrated need for sensitive data;
+\item authorization for all users at the requesting institution;
+\item signature by a senior level official and key staff;
+\item a data security plan;
+\item agreement by researchers not to identify individual research subjects or to link data received with other microdata files; and
+\item typically review of all statistical output before publication, though licensing agreement delegate this to the requesting institution (researchers)
+[text from Restricted Access Procedures].
+\item 
+The license may be for a specified period of time and data files must be returned or destroyed. 
+\item Some licensors require fees and/or approval by an institutional review board. 
+\end{itemize}
+
+\paragraph{Examples}
+\begin{itemize}
+    \item NCES provides access to certain data sets through a licensing scheme. Additional information on this method is provided here: \url{https://nces.ed.gov/FCSM/pdf/CDAC\_RAP.pdf}
+    \item Various agency-sponsored surveys, such as the National Longitudinal Surveys of Youth (NLSY) may provide access to certain elements of otherwise public-use microdata via a licensing scheme. For instance, the NLSY79 Geocode Data is subject to a \href{https://www.bls.gov/nls/questions-and-answers.htm#anch25}{variant of a licensing program}. Note that yet other data may only be available through more restricted access methods, such as enclave data.
+\end{itemize}
+
+\paragraph{Pros for Licensing Program}
+\begin{itemize}
+    \item Provides for flexibility in terms of analysis methods and user computing infrastructure
+    \item Because no computer infrastructure needs to be set up to support access, relatively low-cost method
+\end{itemize}
+
+\paragraph{Cons for Licensing Program}
+
+\begin{itemize}
+    \item Loss of control over data security, mitigated by inspections
+    \item Potential loss of control over output control
+\end{itemize}
+
+
+
+
+ 
+
+\subsubsection{Future Placeholder for Highly Restricted Access Tier}
+(leave blank)
+
